@@ -1,4 +1,0 @@
-#!/bin/bash
-echo "ANT OS Custom Command by Abhinav, Navansh, and Tejas"
-figlet "ANT OS" | lolcat
-cat /usr/local/share/ant_abhinav_navansh_tejas.txt | lolcat
