@@ -1,0 +1,207 @@
+#!/usr/bin/python3
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('XApp', '1.0')
+from gi.repository import Gio, GLib, GObject, Gtk, XApp, Gdk
+import os
+import sys
+import json
+
+DBUS_NAME = "org.x.StatusIcon"
+DBUS_PATH = "/org/x/StatusIcon"
+
+class StatusWidget(Gtk.ToggleButton):
+    __gsignals__ = {
+        "re-sort": (GObject.SignalFlags.RUN_LAST, None, ())
+    }
+
+    def __init__(self, icon):
+        super(Gtk.ToggleButton, self).__init__()
+
+        self.proxy = icon
+        self.name = self.proxy.get_name()
+        self.add_events(Gdk.EventMask.SCROLL_MASK)
+
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+
+        self.image = Gtk.Image()
+        self.label = Gtk.Label()
+        box.pack_start(self.image, False, False, 6)
+        box.add(self.label)
+        self.add(box)
+
+        flags = GObject.BindingFlags.DEFAULT | GObject.BindingFlags.SYNC_CREATE
+
+        self.image.props.icon_size = Gtk.IconSize.DIALOG
+        self.set_icon(self.proxy.props.icon_name)
+
+        self.show_all()
+
+        self.proxy.bind_property("label", self.label, "label", flags)
+        self.proxy.bind_property("tooltip-text", self, "tooltip-markup", flags)
+        self.proxy.bind_property("visible", self, "visible", flags)
+
+        self.proxy.bind_property("primary-menu-is-open", self, "active", flags)
+        self.proxy.bind_property("secondary-menu-is-open", self, "active", flags)
+
+        self.proxy.connect("notify::icon-name", self.on_icon_name_changed)
+        self.proxy.connect("notify::name", self.on_name_changed)
+
+        self.connect("button-press-event", self.on_button_press)
+        self.connect("button-release-event", self.on_button_release)
+        self.connect("scroll-event", self.on_scroll)
+
+    def on_icon_name_changed(self, proxy, gparamspec, data=None):
+        string = self.proxy.props.icon_name
+
+        self.set_icon(string)
+
+    def on_name_changed(self, proxy, gparamspec, data=None):
+        self.emit("re-sort")
+
+    def set_icon(self, string):
+        if string:
+            if string and os.path.exists(string):
+                self.image.set_from_file(string)
+            else:
+                self.image.set_from_icon_name(string, Gtk.IconSize.DIALOG)
+        else:
+            self.image.set_from_icon_name("image-missing", Gtk.IconSize.DIALOG)
+
+    def on_button_press(self, widget, event):
+        # We're simulating a top panel here
+        alloc = widget.get_allocation()
+        ignore, x, y = widget.get_window().get_origin()
+
+        x += alloc.x
+        y += alloc.y + alloc.height
+        time = event.time
+        print ("Button press : %d:%d" % (x, y))
+        self.proxy.call_button_press_sync(x, y, event.button, event.time, Gtk.PositionType.TOP, None)
+
+    def on_button_release(self, widget, event):
+        # We're simulating a top panel here
+        alloc = widget.get_allocation()
+        ignore, x, y = widget.get_window().get_origin()
+
+        x += alloc.x
+        y += alloc.y + alloc.height
+        time = event.time
+        print ("Button release : %d:%d" % (x, y))
+        self.proxy.call_button_release_sync(x, y, event.button, event.time, Gtk.PositionType.TOP, None)
+
+    def on_scroll(self, widget, event):
+        has, direction = event.get_scroll_direction()
+
+        x_dir = XApp.ScrollDirection.UP
+        delta = 0
+
+        if direction != Gdk.ScrollDirection.SMOOTH:
+            x_dir = XApp.ScrollDirection(int(direction))
+
+            if direction == Gdk.ScrollDirection.UP:
+                delta = -1
+            elif direction == Gdk.ScrollDirection.DOWN:
+                delta = 1
+            elif direction == Gdk.ScrollDirection.LEFT:
+                delta = -1
+            elif direction == Gdk.ScrollDirection.RIGHT:
+                delta = 1
+
+        print ("Scroll : delta: %d, orientation: %d" % (delta, x_dir))
+        self.proxy.call_scroll_sync(delta, x_dir, event.time, None)
+
+class StatusApplet(GObject.Object):
+
+    def __init__(self):
+        super(StatusApplet, self).__init__()
+
+        self.window = Gtk.Window()
+        self.window.set_accept_focus (False)
+        self.window.connect("destroy", self.on_window_destroy)
+
+        self.main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL,
+                                margin=6,
+                                spacing=6)
+        self.window.add(self.main_box)
+
+        self.disco_button = Gtk.Button()
+        self.main_box.pack_start(self.disco_button, False, False, 0)
+        self.disco_button.connect("clicked", self.on_disco_button_clicked)
+
+        self.indicator_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
+                                     spacing=6)
+        self.main_box.pack_start(self.indicator_box, False, False, 0)
+
+        self.indicators = {}
+
+        self.monitor = None
+        self.setup_monitor()
+
+        self.window.show_all()
+
+    def on_window_destroy(self, widget, data=None):
+        self.destroy_monitor()
+        Gtk.main_quit()
+
+    def on_disco_button_clicked(self, widget, data=None):
+        if self.monitor == None:
+            self.setup_monitor ()
+        else:
+            self.destroy_monitor()
+
+    def setup_monitor (self):
+        self.monitor = XApp.StatusIconMonitor()
+        self.monitor.connect("icon-added", self.on_icon_added)
+        self.monitor.connect("icon-removed", self.on_icon_removed)
+
+        self.disco_button.set_label("Disconnect monitor")
+
+    def destroy_monitor (self):
+        for key in self.indicators.keys():
+            self.indicator_box.remove(self.indicators[key])
+
+        self.monitor = None
+        self.indicators = {}
+
+        self.disco_button.set_label("Connect monitor")
+
+    def on_icon_added(self, monitor, proxy):
+        name = proxy.get_name() + proxy.get_object_path()
+
+        self.indicators[name] = StatusWidget(proxy)
+        self.indicator_box.add(self.indicators[name])
+        self.indicators[name].connect("re-sort", self.sort_icons)
+
+        self.sort_icons()
+
+    def on_icon_removed(self, monitor, proxy):
+        name = proxy.get_name() + proxy.get_object_path()
+
+        self.indicator_box.remove(self.indicators[name])
+        self.indicators[name].disconnect_by_func(self.sort_icons)
+        del(self.indicators[name])
+
+        self.sort_icons()
+
+    def sort_icons(self, status_icon=None):
+        icon_list = list(self.indicators.values())
+
+        # for i in icon_list:
+        #     print("before: ", i.proxy.props.icon_name, i.proxy.props.name.lower())
+
+        icon_list.sort(key=lambda icon: icon.proxy.props.name.replace("org.x.StatusIcon.", "").lower())
+        icon_list.sort(key=lambda icon: icon.proxy.props.icon_name.lower().endswith("symbolic"))
+
+        # for i in icon_list:
+        #     print("after: ", i.proxy.props.icon_name, i.proxy.props.name.lower())
+
+        icon_list.reverse()
+
+        for icon in icon_list:
+            self.indicator_box.reorder_child(icon, 0)
+
+if __name__ == '__main__':
+    applet = StatusApplet()
+    Gtk.main()
+    sys.exit(0)

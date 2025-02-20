@@ -1,0 +1,55 @@
+option('docs',
+    type: 'boolean',
+    value: false,
+    description: 'Build the API references (requires gtk-doc)'
+)
+option('deprecated_warnings',
+    type : 'boolean',
+    value : false,
+    description: 'Show build warnings for deprecations'
+)
+option('py-overrides-dir',
+    type : 'array',
+    value : [],
+    description: 'Path to pygobject overrides directory'
+)
+option('python_target',
+    type: 'array',
+    value: ['python3'],
+    description: 'Python installation to target to lookup if py-overrides-dir not supplied'
+)
+option('status-notifier',
+    type: 'boolean',
+    value: true,
+    description: 'Build the XApp StatusNotifier service.'
+)
+option('app-lib-only',
+    type: 'boolean',
+    value: false,
+    description: 'Limit build to core library only and without the keyboard layout controller. This is to allow flatpak bundlings.'
+)
+option('debian_derivative',
+    type: 'boolean',
+    value: false,
+    description: 'Use paths specific to Debian and derivatives.'
+)
+option('mate',
+    type: 'boolean',
+    value: true,
+    description: 'Install mate specific items.'
+)
+option('xfce',
+    type: 'boolean',
+    value: true,
+    description: 'Install xfce specific items.'
+)
+option('introspection',
+    type: 'boolean',
+    value: true,
+    description: 'Enable GObject Introspection.'
+)
+option('vapi',
+    type: 'boolean',
+    value: true,
+    description: 'Enable Vala bindings.'
+)

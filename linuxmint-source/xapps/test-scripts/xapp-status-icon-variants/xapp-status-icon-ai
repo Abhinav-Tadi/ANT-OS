@@ -1,0 +1,82 @@
+#!/usr/bin/python3
+
+import gi
+gi.require_version('AppIndicator3', '0.1')
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk, AppIndicator3
+from gi.repository import GLib, GObject
+import sys
+
+"""
+This variant tests behavior of a program using mint-patched AppIndicator, which will fall
+back to XAppStatusIcon if there is no AppIndicator support in the desktop environment.
+AppIndicator expects both left- and right-click to display the menu, so internally, AppIndicator
+sets both primary and secondary menus on the XAppStatusIcon.
+"""
+
+class App(GObject.Object):
+    def __init__(self):
+        super(App, self).__init__()
+        self.window = None
+
+        self.indicator = AppIndicator3.Indicator.new("xapp-status-icon-via-libappindicator",
+                                                       "info",
+                                                       AppIndicator3.IndicatorCategory.SYSTEM_SERVICES)
+        self.indicator.set_icon_full("info", "Everything is fine.")
+        self.indicator.set_label("AppIndicator3 1", "AppIndicator3 1000")
+        self.indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
+        self.indicator.set_title("Testing patched appindicator fallback to XApp.StatusIcon")
+        self.counter = 1
+
+        self.menu = Gtk.Menu()
+        secondary_activation_item = Gtk.MenuItem.new_with_label("Activate target (middle click)")
+        secondary_activation_item.connect("activate", self.activate_window)
+        self.indicator.set_secondary_activate_target(secondary_activation_item)
+
+        self.menu.append(secondary_activation_item)
+        self.menu.append(Gtk.MenuItem.new_with_label("Engage the hyperdrive"))
+        self.menu.append(Gtk.SeparatorMenuItem())
+        self.menu.append(Gtk.MenuItem.new_with_label("It's a trap!"))
+        self.menu.show_all()
+
+        self.indicator.set_menu(self.menu)
+
+        self.indicator.connect("scroll-event", self.handle_scroll_event)
+        GLib.timeout_add_seconds(2, self.on_timeout_cb)
+
+    def activate_window(self, item, data=None):
+        w = Gtk.Window(default_width=300, default_height=130)
+        b = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        w.add(b)
+        self.label = Gtk.Label("How can I help you?")
+        b.pack_start(self.label, True, True, 0)
+
+        self.window = w
+        w.show_all()
+
+    def handle_scroll_event(self, icon, amount, direction, data=None):
+        if self.window == None:
+            self.activate_window(None)
+
+        if direction == Gdk.ScrollDirection.UP:
+            self.label.set_text("Scrolled Up!")
+        elif direction == Gdk.ScrollDirection.DOWN:
+            self.label.set_text("Scrolled Down!")
+        elif direction == Gdk.ScrollDirection.LEFT:
+            self.label.set_text("Scrolled Left!")
+        else:
+            self.label.set_text("Scrolled Right!")
+
+    def on_timeout_cb(self):
+        self.counter += 1
+        self.indicator.set_label("AppIndicator3 %d" % self.counter, "AppIndicator3 1000")
+        return True
+
+if __name__ == '__main__':
+    GLib.setenv ("G_MESSAGES_DEBUG", "all", True)
+    app = App()
+    try:
+        GLib.MainLoop().run()
+    except KeyboardInterrupt:
+        pass
+    sys.exit(0)
