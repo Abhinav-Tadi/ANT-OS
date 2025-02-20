@@ -1,0 +1,172 @@
+# Asturian translation for linuxmint
+# Copyright (c) 2024 Rosetta Contributors and Canonical Ltd 2024
+# This file is distributed under the same license as the linuxmint package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: linuxmint\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-11-25 11:16+0000\n"
+"PO-Revision-Date: 2024-07-19 05:17+0000\n"
+"Last-Translator: Havi <Unknown>\n"
+"Language-Team: Asturian <ast@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2025-01-06 12:01+0000\n"
+"X-Generator: Launchpad (build 6394e03793719e8d73f5a60b5439440e693c92f1)\n"
+
+#: libxapp/favorite-vfs-file.c:463
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: libxapp/favorite-vfs-file.c:933 libxapp/favorite-vfs-file.c:963
+#: libxapp/favorite-vfs-file.c:992 libxapp/favorite-vfs-file.c:1026
+#: libxapp/favorite-vfs-file.c:1053 libxapp/favorite-vfs-file.c:1082
+#: libxapp/favorite-vfs-file.c:1115 libxapp/favorite-vfs-file.c:1142
+#: libxapp/favorite-vfs-file.c:1204 libxapp/favorite-vfs-file.c:1239
+#: libxapp/favorite-vfs-file.c:1269 libxapp/favorite-vfs-file.c:1308
+msgid "Operation not supported"
+msgstr "Operación non sofitada"
+
+#: libxapp/xapp-icon-chooser-button.c:207
+#: libxapp/xapp-icon-chooser-dialog.c:639
+msgid "Icon size"
+msgstr "Tamañu d'Iconu"
+
+#: libxapp/xapp-icon-chooser-button.c:208
+#: libxapp/xapp-icon-chooser-dialog.c:640
+msgid "The preferred icon size."
+msgstr "Tamañu d'iconu preferíu"
+
+#: libxapp/xapp-icon-chooser-button.c:222
+msgid "Icon"
+msgstr "Iconu"
+
+#: libxapp/xapp-icon-chooser-button.c:223
+msgid "The string representing the icon."
+msgstr "La cadena representa l'iconu"
+
+#: libxapp/xapp-icon-chooser-button.c:234
+msgid "Category"
+msgstr "Estaya"
+
+#: libxapp/xapp-icon-chooser-button.c:235
+msgid "The default category."
+msgstr "Estaya predeterminada"
+
+#: libxapp/xapp-icon-chooser-dialog.c:98
+msgid "Actions"
+msgstr "Aiciones"
+
+#: libxapp/xapp-icon-chooser-dialog.c:101
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: libxapp/xapp-icon-chooser-dialog.c:104
+msgid "Categories"
+msgstr "Categoríes"
+
+#: libxapp/xapp-icon-chooser-dialog.c:107
+msgid "Devices"
+msgstr "Preseos"
+
+#: libxapp/xapp-icon-chooser-dialog.c:110
+msgid "Emblems"
+msgstr "Emblemes"
+
+#: libxapp/xapp-icon-chooser-dialog.c:113
+msgid "Emoji"
+msgstr "Fustaxes"
+
+#: libxapp/xapp-icon-chooser-dialog.c:116
+msgid "Mime types"
+msgstr "Tribes MIME"
+
+#: libxapp/xapp-icon-chooser-dialog.c:119
+msgid "Places"
+msgstr "Sitios"
+
+#: libxapp/xapp-icon-chooser-dialog.c:122
+msgid "Status"
+msgstr "Estáu"
+
+#: libxapp/xapp-icon-chooser-dialog.c:125
+msgid "Other"
+msgstr "Otros"
+
+#: libxapp/xapp-icon-chooser-dialog.c:454
+msgid "Choose an icon"
+msgstr "Esbillar un iconu"
+
+#: libxapp/xapp-icon-chooser-dialog.c:476
+msgid "Search"
+msgstr "Guetar"
+
+#: libxapp/xapp-icon-chooser-dialog.c:483
+msgid "Browse"
+msgstr "Restolar"
+
+#: libxapp/xapp-icon-chooser-dialog.c:539
+msgid "Loading..."
+msgstr "Cargando…"
+
+#: libxapp/xapp-icon-chooser-dialog.c:586
+msgid "Default"
+msgstr "Predetermináu"
+
+#: libxapp/xapp-icon-chooser-dialog.c:596
+msgid "Select"
+msgstr "Esbillar"
+
+#: libxapp/xapp-icon-chooser-dialog.c:605
+#: libxapp/xapp-icon-chooser-dialog.c:1936
+msgid "Cancel"
+msgstr "Encaboxar"
+
+#: libxapp/xapp-icon-chooser-dialog.c:652
+msgid "Allow Paths"
+msgstr "Permitir rutes"
+
+#: libxapp/xapp-icon-chooser-dialog.c:653
+msgid "Whether to allow paths."
+msgstr "Permitir rutes"
+
+#: libxapp/xapp-icon-chooser-dialog.c:664
+msgid "Default Icon"
+msgstr "Iconu por defeutu"
+
+#: libxapp/xapp-icon-chooser-dialog.c:665
+msgid "The icon to use by default"
+msgstr "L'iconu que va usase por defeutu"
+
+#: libxapp/xapp-icon-chooser-dialog.c:1933
+msgid "Select image file"
+msgstr "Escoyer archivu d'imaxe"
+
+#: libxapp/xapp-icon-chooser-dialog.c:1938
+msgid "Open"
+msgstr "Abrir"
+
+#: libxapp/xapp-icon-chooser-dialog.c:1953
+msgid "Image"
+msgstr "Imaxe"
+
+#: status-applets/mate/mate-xapp-status-applet.py:330
+msgid "About"
+msgstr "Tocante a"
+
+#: status-applets/mate/mate-xapp-status-applet.py:350
+#: status-applets/mate/org.x.MateXAppStatusApplet.mate-panel-applet.in.in:7
+#: status-applets/mate/org.x.MateXAppStatusApplet.mate-panel-applet.in.in:11
+msgid "Area where XApp status icons appear"
+msgstr "Zona ú se van amosar los iconos d'estáu XApp"
+
+#: status-applets/mate/org.x.MateXAppStatusApplet.mate-panel-applet.in.in:6
+msgid "XApp Status Applet Factory"
+msgstr "Fábrica del applet d'estáu XApp"
+
+#: status-applets/mate/org.x.MateXAppStatusApplet.mate-panel-applet.in.in:10
+msgid "XApp Status Applet"
+msgstr "Applet d'estáu XApp"

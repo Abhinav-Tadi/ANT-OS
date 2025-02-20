@@ -1,0 +1,1009 @@
+xapp (2.8.8) xia; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Jan 2025 14:17:49 +0000
+
+xapp (2.8.7) xia; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 05 Dec 2024 10:56:38 +0000
+
+xapp (2.8.6) xia; urgency=medium
+
+  [ Michael Webster ]
+  * mate-xapp-status-applet: Fix application theme provider due to PyGObject bug.
+
+  [ Matt Turnbull ]
+  * Allow installing gi override to multiple python installations (#183)
+  * Add option to disable building introspection and vala bindings. (#184)
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-button.c: Use gtk_widget_destroy() to clean up the dialog window.
+  * xapp-icon-chooser-button.c: Fix a build warning.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Nov 2024 10:17:31 +0000
+
+xapp (2.8.5) wilma; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Jul 2024 10:43:48 +0100
+
+xapp (2.8.4) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * visibility-group: Use g_new instead of deprecated g_slice.
+  * visibility-group: Use a GWeakNotify instead of the destroy signal for automatic widget removal.
+  * xapp-visibility-group: add missing declaration in header file.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 18 Jun 2024 20:58:34 +0100
+
+xapp (2.8.3) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * Add new gsettings keys for xdg Settings portal v2.
+  * gsettings: Fix a default value.
+
+  [ Clement Lefebvre ]
+  * Remove accent-rgb setting
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog.c: Fix mimetype test for browsed images.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 04 Jun 2024 15:30:42 +0100
+
+xapp (2.8.2) virginia; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 04 Jan 2024 17:04:50 +0000
+
+xapp (2.8.1) virginia; urgency=medium
+
+  * Update docs
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 03 Dec 2023 15:18:24 +0000
+
+xapp (2.8.0) virginia; urgency=medium
+
+  [ Michael Webster ]
+  * Add github issue templates.
+  * xapp-gtk3-module.c: Use the 'realize' signal to trigger injecting the favorites:// uri into the sidebar places.
+  * xapp-sn-watcher.c: Mute some warning messages from more of dbus-menu, gtk.
+
+  [ Rick Calixte ]
+  * Fix meson.build deprecations up to 0.56.0 (#172)
+
+  [ Michael Webster ]
+  * Update issue template with a link to open and closed issues.
+  * Remove unused includes, bump required gtk version.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 19 Nov 2023 10:39:22 +0000
+
+xapp (2.6.1) victoria; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update documentation
+
+  [ Michael Webster ]
+  * xapp-gpu-offload-helper.c: Check the GLib version before using g_memdup2.
+  * xapp-debug.c: build only with ENABLE_DEBUG.
+  * xapp-sn-watcher.c: Don't exit if XDG_CURRENT_DESKTOP isn't set.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 08 Jun 2023 12:05:44 +0100
+
+xapp (2.6.0) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * favorite-vfs-file.c: Lock the settings object when modifying root metadata.
+  * Fix ENABLE_DEBUG definition in the build.
+  * xapp-sn-watcher: Silence warnings from dbus-menu when not in debug mode.
+
+  [ Joseph Wang ]
+  * add missing gmodule depends (#161)
+
+  [ Michael Webster ]
+  * build: Remove a workaround for gdbus-codegen.
+  * build: Update symbols file.
+  * build: Fix build for meson < 0.60
+  * build: Install xapp-sn-watcher to an arch-specific location.
+  * favorites: Use generic getter for content type check.
+  * sn-item.c: Don't set an empty dbusmenu widget when we receive /NO_DBUSMENU as a path (Qt default menu path when no menu is set).
+  * xapp-status-icon.c: Don't destroy the dummy event window too early.
+
+  [ Thomas Uhle ]
+  * Use generic pattern for the build directory in `.gitignore`
+  * debian: Strip leading slashes from paths in *.install files
+  * debian: Amend copyright file
+
+  [ Clement Lefebvre ]
+  * debian: Amend rules file
+  * debian: Install xinitrc script `80xapp-gtk3-module.sh` to /etc/X11/Xsession.d
+
+  [ Thomas Uhle ]
+  * makedoc: Update target URL
+  * debian: Clean up control file
+  * debian: Add lintian-overrides files
+
+  [ Michael Webster ]
+  * Add XAppGpuOffloadHelper.
+  * Add a launcher for offloading.
+  * github workflow: Add optional ssh session.
+  * Add XAppDarkModeManager to allow support for XDG desktop settings portal from Gtk3 apps.
+  * debian: Change how the old xinit script is removed during install.
+  * debian: Update .symbols.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 01 Jun 2023 10:16:15 +0100
+
+xapp (2.4.2) vera; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 02 Dec 2022 17:40:03 +0000
+
+xapp (2.4.1) vera; urgency=medium
+
+  * Fix typo
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 16 Nov 2022 10:51:55 +0000
+
+xapp (2.4.0) vera; urgency=medium
+
+  [ Michael Webster ]
+  * Add missing build dependency.
+  * Use github actions for CI builds.
+  * xapp-sn-watcher: Use /dev/shm for temp files if it's available, and clean them up when exiting.
+  * Add XAppVisibilityGroup.
+  * xapp-debug: Print the topic name in logging output.
+  * sn-item: Don't update the icon name if the tooltip was also updated.
+  * sn-item: Don't update the id property unless it has changed.
+  * xapp-status-icon.c: Update all icons when we lose or regain our identity on dbus.
+  * xapp-sn-watcher: Add a debug key to specify flags.
+  * sn-item: Silence warning caused when an app exits without notice.
+  * Use G_LOG_LEVEL_MESSAGE for debugging messages.
+  * favorites: Try to use a file's display name from file attributes when different than the its basename.
+  * favorite-vfs-file.c: Fix memory leak.
+  * build: Use gnome.mkenums_simple() to generate enum types.
+  * sn-item.c: Clean up temp files when finalizing.
+  * sn-item.c: Don't unref the menu during cleanup.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 15 Nov 2022 10:30:12 +0000
+
+xapp (2.2.15) vanessa; urgency=medium
+
+  [ Bobby Rong ]
+  * libxapp: add missing gio-unix-2.0 dependency (#156)
+
+  [ Michael Webster ]
+  * xapp-status-icon-monitor.c: Fix copy/paste error.
+  * xapp-status-icon.c: Make XAppStatusIconState per-process.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Sep 2022 15:37:59 +0100
+
+xapp (2.2.14) vanessa; urgency=medium
+
+  [ Michael Webster ]
+  * mate status applet: Adjust icon relative sizes to the panel height.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 21 Jul 2022 21:11:46 +0200
+
+xapp (2.2.13) vanessa; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog: Don't lower-case paths.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 15 Jul 2022 15:23:04 +0200
+
+xapp (2.2.12) vanessa; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Jun 2022 13:53:30 +0200
+
+xapp (2.2.11) vanessa; urgency=medium
+
+  * Update documentation
+  * CI: Fix target names
+  * Add a new icon xapp-edit-symbolic
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 15 Jun 2022 17:15:38 +0200
+
+xapp (2.2.10) vanessa; urgency=medium
+
+  [ Michael Webster ]
+  * Add a debian/ symbols file.
+
+  [ Clement Lefebvre ]
+  * CI: Update targets
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 10 Jun 2022 09:47:35 +0200
+
+xapp (2.2.9) vanessa; urgency=medium
+
+  [ Michael Webster ]
+  * Implement scroll events with the fallback icon (GtkStatusIcon).
+  * sn-item.c: Handle Id property updates.
+  * xapp-icon-chooser-dialog.c: Don't be case-sensitive when searching.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 09 Jun 2022 15:44:34 +0200
+
+xapp (2.2.8) una; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 31 Dec 2021 13:03:46 +0000
+
+xapp (2.2.7) una; urgency=medium
+
+  * icons: Add xapp-view-fit-height-symbolic and xapp-view-fit-width-symbolic
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Dec 2021 13:09:50 +0000
+
+xapp (2.2.6) una; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update documentation
+
+  [ Michael Webster ]
+  * xapp-favorites.c: Unescape the file uri before using it for display.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 06 Dec 2021 15:54:47 +0000
+
+xapp (2.2.5) una; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-favorites: Fix introspection notation for _get_favorites().
+  * Fix a couple of build warnings.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 22 Nov 2021 12:30:12 +0000
+
+xapp (2.2.4) uma; urgency=medium
+
+  [ Joshua Peisach ]
+  * meson gir: Export 'xapp' as a package
+
+  [ Michael Webster ]
+  * xapp-gtk3-module.c: Apply window icon override to all windows for an app.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 15 Oct 2021 15:43:58 +0100
+
+xapp (2.2.3) uma; urgency=medium
+
+  [ Michael Webster ]
+  * mate status applet: Change icon name in applet definition file, and add a new icon to the xapp hicolor set.
+  * Fix mate status icon.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 23 Jul 2021 12:21:14 +0100
+
+xapp (2.2.2) uma; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 25 Jun 2021 15:15:38 +0100
+
+xapp (2.2.1) uma; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update docs
+
+  [ Michael Webster ]
+  * test-scripts: Add a QSystemTrayIcon script.
+  * qt-system-tray.py: use a class.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Jun 2021 11:02:16 +0100
+
+xapp (2.2.0) uma; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-preferences-window.c: Hide the sidebar switcher initially to prevent it showing even with single-page views.
+  * all: Add debug topics.
+  * xapp-favorites.c: Free the favorite list when building a GtkMenu.
+
+  [ Stephen Collins ]
+  * Add a class to programmatically set styling on a particular widget.
+  * util: add a utility function to convert from a pango font string to css (#135)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 27 May 2021 09:36:10 +0100
+
+xapp (2.0.7) ulysa; urgency=medium
+
+  [ Michael Webster ]
+  * Don't build the gtk module for lib-only builds (flatpak).
+  * xapp-favorites.c: Don't crash trying to remove a previously-removed favorite.
+  * favorite-vfs-file-monitor.c: When handling folder updates, send out removals before additions.
+  * xapp-util: Add a function to check whether the session is fully active.
+  * xapp-sn-watcher.c: Skip the startup delay if the session has not finished loading.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 26 Feb 2021 10:59:48 +0000
+
+xapp (2.0.6) ulyssa; urgency=medium
+
+  [ Michael Webster ]
+  * 80xapp-gtk3-module.sh: Use GTK3_MODULES instead of GTK_MODULES.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 Jan 2021 11:13:02 +0000
+
+xapp (2.0.5) ulyssa; urgency=medium
+
+  [ Michael Webster ]
+  * favorite-vfs-file.c: Don't mark favorites that have unavailable target files as symbolic links.
+  * favorite-vfs-file.c: Remove a file from favorites when deleted or trashed (but don't actually delete or trash them) - this brings the favorites behavior in line with recents.
+  * favorite-vfs-file.c: Remove some methods that can't be supported.
+  * Go back to leaving favorites with missing targets as symlinks.
+  * favorite-vfs-file.c: Add thumbnailing preference to the filesystem info.
+  * xapp-status-icon.c: Construct fallback dbus name from a non-localized string.
+  * status icon: Replace g_get_application_name with g_get_progname everywhere else (followup to previous commit).
+  * xapp-status-icon-monitor.c: fix typo.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+  [ Michael Webster ]
+  * xapp-gtk3-module.c: Add a mechanism to allow a GtkWindow's icon (#127)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 02 Jan 2021 18:35:48 +0000
+
+xapp (2.0.4) ulyssa; urgency=medium
+
+  [ Leigh Scott ]
+  * Change shebang path
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 13 Dec 2020 12:16:21 +0000
+
+xapp (2.0.3) ulyssa; urgency=medium
+
+  [ Eli Schwartz ]
+  * fix "build/install: Make the favorite gtk module's xinit file executable."
+
+  [ Leigh Scott ]
+  * Add shebang to 80xapp-gtk3-module.sh
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 10 Dec 2020 12:14:28 +0000
+
+xapp (2.0.2) ulyssa; urgency=medium
+
+  * Add an extra icon for favorites
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 08 Dec 2020 12:57:01 +0000
+
+xapp (2.0.1) ulyssa; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update docs
+
+  [ Eli Schwartz ]
+  * fix xorg-server startup variable
+
+  [ Michael Webster ]
+  * favorites: Make sure initializing favorites also initializes the uri scheme.
+  * xapp-favorites.c: Add a note about the favorites uri in the class description.
+  * build/install: Make the favorite gtk module's xinit file executable.
+  * build: update some dependencies.
+  * xapp-gtk3-module.c: Override GObject's constructed vfunc to inject the favorites uri into GtkPlacesSidebars rather than hooking onto a signal.
+  * build: use buildtype=debugoptimized by default.
+  * sn-item.c: Fix typo.
+  * various: Fix some previously missed build warnings.
+  * xapp-gtk3-module.c: Don't add a favorites section if there aren't any favorites.
+  * favorite-vfs-file.c: Don't assume a GError was passed in for file_query_info.
+  * favorite-vfs-file-enumerator.c: Fix a couple more places where an error was assumed.
+
+  [ NikoKrause ]
+  * change favorite icons
+
+  [ Michael Webster ]
+  * favorite-vfs-file.c: Don't free priv->uri until finalize.
+  * favorites: Fix some leaks revealed by valgrind.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 08 Dec 2020 10:07:26 +0000
+
+xapp (2.0.0) ulyssa; urgency=medium
+
+  [ Michael Webster ]
+  * Bump for favorites support
+  * .gitignore: Ignore the new debian build folder.
+  * favorites: expose xapp_favorites_rename (), it was mistakenly made private during some cleanup.
+  * xapp-gtk3-module.c: Don't initialize favorites until they're needed.
+  * xapp-gtk3-module.c: Register the favorites uri scheme immediately, rather than when XAppFavorites is instantiated.
+  * xapp-favorites: Add missing pointer to the DestroyData.
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 25 Nov 2020 11:27:06 +0000
+
+xapp (1.8.9) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * sn-watcher.c: Move invocation completion to the registration callback.
+  * sn-item.c: use a different method of fetching the pixmap.
+  * Make property-retrieval fully asynchronous.
+  * mate-xapp-status-applet.py: Adapt to change brought by 9c4d5e92d2eb288.
+  * build: Allow making a library-only build for flatpak packaging.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 14 Aug 2020 14:16:01 +0100
+
+xapp (1.8.8) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-button.c: Remove leftover debugging line.
+  * xapp-sn-watcher: Create StatusNotifierItem proxies asynchronously, and don't try to load their properties.
+  * xapp-sn-watcher: Add an app list to flag items that should have their tooltip replaced by the application name.
+  * build: Make build of xapp-sn-watcher optional, defaulting to true.
+  * xapp-sn-watcher: Add key to disable StatusNotifier support, but leave appindicator support enabled.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 24 Jun 2020 13:21:16 +0100
+
+xapp (1.8.7) ulyana; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update docs
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Get rid of the dead 'shadow' region around menus, as they can interfere with clicking on the icon to close the menu.
+  * xapp-status-icon: Add new properties for menu/button state handling and one for metadata (miscellaneous info to help define behavior in the status applets).
+  * xapp-sn-watcher: Set status icon metadata for appindicator icons, to inform the applet to highlight/toggle the panel icon with either button click when opening the menu.
+  * mate-xapp-status-applet.py: Use new properties to sync button toggle state with the menu state.
+  * test-scripts: Update some scripts to demonstrate new property use.
+  * sn-item: Remove support for XAyatanaLabel.
+  * xapp-sn-watcher: Update clear the registration list before freeing the table of registered items.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 06 Jun 2020 14:29:58 +0100
+
+xapp (1.8.6) ulyana; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update docs
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Add xapp_status_icon_popup_menu() and use a more reliable GtkMenu popup method.
+  * xapp-status-icon.c: Fix inadvertent version change in doc string.
+
+  [ NikoKrause ]
+  * Icons: Add symbolic icons for xreaders annotation features (#92)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 23 May 2020 12:48:43 +0100
+
+xapp (1.8.5) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-status-icon: Add a get_visible method.
+  * mate applet: Use markup for tooltips, and update test script to reflect this as well.
+  * mate-xapp-status-applet: Fix set icon error handling when an icon name is missing.
+  * xapp-status-icon: Add a get_visible method.
+  * mate applet: Use markup for tooltips, and update test script to reflect this as well.
+  * mate-xapp-status-applet: Fix set icon error handling when an icon name is missing.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 21 May 2020 11:23:00 +0100
+
+xapp (1.8.4) ulyana; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update documentation
+  * README: Update link to docs
+  * Update README.md
+
+  [ Michael Webster ]
+  * xapp-util.c: Initialize auto variables.
+
+  [ NikoKrause ]
+  * Icons: add pin/unpin symbolic (#90)
+
+  [ Clement Lefebvre ]
+  * Icons: Add xapp-diaporama-symbolic
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 May 2020 15:44:39 +0100
+
+xapp (1.8.3) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-sn-watcher: Add autostart file, to start at session, to start at the session initialization phase.
+  * Add a utility function to check for nvidia on-demand mode.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 May 2020 12:14:06 +0100
+
+xapp (1.8.2) ulyana; urgency=medium
+
+  * xapp-sn-watcher: Don't enable in MATE
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Apr 2020 12:03:41 +0100
+
+xapp (1.8.1) ulyana; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Update documentation
+  * CI: Update targets
+  * l10n: Fix makepot picking up unwanted service file
+
+  [ Michael Webster ]
+  * Eliminate all appindicator-specific code from xapp-status-icon.c, Add a whitelist for xapp-sn-watcher to list ai icons  that should left-click to activate.
+
+  [ Clement Lefebvre ]
+  * Update documentation
+  * CI: Update targets
+  * l10n: Fix makepot picking up unwanted service file
+
+  [ Michael Webster ]
+  * Eliminate all appindicator-specific code from xapp-status-icon.c, Add a whitelist for xapp-sn-watcher to list ai icons  that should left-click to activate.
+  * xapp-sn-watcher: Add a whitelist to manage what desktop environments to start in.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 25 Apr 2020 18:37:40 +0100
+
+xapp (1.8.0) ulyana; urgency=medium
+
+  [ worldofpeace ]
+  * Add option to specify path to pygobject override directory
+  * Install icons and scripts using meson options
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Sync the visible state of the fallback GtkStatusIcon when it is first created.
+  * xapp-status-icon.c: Fix the timeout duration for xapp_status_icon_any_monitors.
+
+  [ leigh123linux ]
+  * Remove use of deprecated g_type_class_add_private function
+
+  [ Stephen Collins ]
+  * Add gitignore
+
+  [ JosephMcc ]
+  * xapp-monitor-blanker: Use G_DECLARE_FINAL_TYPE
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: check if we have a fallback status icon before disconnecting signals from it.
+  * xapp-status-icon.c: Only call gtk_status_icon_set_name() when explicitly requested.
+  * Add StatusNotifier watcher.
+  * mate applet: Set the new icon size property (this provides a hint to xapp-sn-watcher or any client app to provide a correct icon size in some situations).
+  * status icon: Add support for scroll events
+  * debian: Remove python2 deps.
+  * debian/control: Add missing dbusmenu dependency.
+
+  [ Clement Lefebvre ]
+  * Packaging: Re-add python-gi-dev as build-dep
+
+  [ Michael Webster ]
+  * xapp-sn-watcher: rewrite in C due to leaky dbus python bindings.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 23 Apr 2020 15:49:33 +0100
+
+xapp (1.6.9) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog.c: fix hidpi icon rendering and spacing.
+
+  [ Clement Lefebvre ]
+  * l10n: Update translations
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Allow a primary-click to activate appindicator icons when they have set a 'secondary activate' target.  Otherwise, have primary open the menu as it ordinarily would.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 07 Jan 2020 10:21:15 +0000
+
+xapp (1.6.8) tricia; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Dec 2019 14:57:44 +0000
+
+xapp (1.6.7) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Reposition the menu when part of it would end up below the workarea of the monitor.
+  * mate-xapp-status-applet.py: Call widget.show_all() before binding to the proxy's visible property.  The binding is one way only - local changes can override the state initially set by the proxy.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 10 Dec 2019 09:48:37 +0000
+
+xapp (1.6.6) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * mate-xapp-status-applet.py: Add a small margin at either end of the applet, and allow ctrl-right-clicks anywhere on it, so the user can bring up the About menu.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 04 Dec 2019 16:24:15 +0000
+
+xapp (1.6.5) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * mate-xapp-status-applet.py: Hardcode symbolic icons to 22px.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 29 Nov 2019 18:33:05 +0000
+
+xapp (1.6.4) tricia; urgency=medium
+
+  * Mate applet: Don't use a handle
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 28 Nov 2019 19:58:37 +0000
+
+xapp (1.6.3) tricia; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Nov 2019 17:11:36 +0000
+
+xapp (1.6.2) tricia; urgency=medium
+
+  [ Eli Schwartz ]
+  * mate applet: fix configuring
+  * mate applet: fix regression in install location
+  * debian: fixup changed file locations
+
+  [ Michael Webster ]
+  * mate-xapp-status-applet.py: handle a null icon name correctly.
+  * test-scripts: have xapp-status-applet sort icons in the same manner the real applets do (symbolic to the right, then by alpha process name).
+  * xapp-status-icon.c: Keep an account of button presses so an orphan release doesn't activate or pop up a menu.
+  * xapp-status-icon: Track and notify changes in types of support for the icon - notify when a status icon is picked up by a native applet, a traditional system tray, or is not being picked up by anything.
+  * xapp-status-icon.c: Replace g_enum_to_string with a custom function, this isn't available with lmde's glib.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 22 Nov 2019 10:36:41 +0000
+
+xapp (1.6.1) tricia; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-status-icon: Add a function to check for the existence of any active status applets.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 13 Nov 2019 17:33:22 +0100
+
+xapp (1.6.0) tricia; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Implement XAppStatusIcon (#67)
+
+  [ James Ross ]
+  * libxapp: cleanup compile warnings (#69)
+
+  [ Michael Webster ]
+  * status icons: Add a monitor class for applets - XAppStatusIconMonitor, (#70)
+  * test-scripts: add a status-icon-via-libappindicator script.
+  * xapp-status-icon.c: Remove leftover debug line
+  * xapp-status-icon: When a menu is provided to XAppStatusIcon, handle positioning and showing it internally instead of requiring the application to do it.
+  * xapp-status-icon.c: Use G_ class macros to cleanup header file, fix xapp_status_icon_get_menu()  (copy/paste error).
+  * Add some useful build C-flags, fix test script exec bit.
+
+  [ Clement Lefebvre ]
+  * Add API reference in docs/reference/
+  * Set theme jekyll-theme-architect
+  * README: Add link to API reference
+
+  [ Michael Webster ]
+  * xapp-status-icon.c: Emit 'activate' during fallback status icon activation.
+  * docs: Generate html automatically
+
+  [ Stephen Collins ]
+  * xapp-icon-chooser-dialog.c: Remove unused variable
+  * icon chooser dialog: add default_icon property
+  * icon chooser dialog: add *_add_custom_category () function
+
+  [ Michael Webster ]
+  * Add a Mate status applet (#72)
+  * xapp-status-icon.c: Refactor event handling.
+
+  [ Stephen Collins ]
+  * xapp-icon-chooser-dialog.c: prevent segfault on non-existent icon name (#76)
+
+  [ Clement Lefebvre ]
+  * IconChooserButton: Add the ability to set the default category (#77)
+
+  [ Stephen Collins ]
+  * xapp-icon-chooser-button.c: add missing dispose method (#78)
+
+  [ Michael Webster ]
+  * mate-xapp-status-applet.py: Make improvements to event handling and widget appearance during clicks.
+  * Add a custom install script for installing the generated header file.
+  * Add i18n for the mate applet.
+  * mate applet: Add an about window, use more appropriate install locations, move build replacement strings to a separate imported file.
+  * xapp-status-icon.c: During async ops, when checking for cancellation, use the error code, as the cancellable may have reset in the interim, but the code will be correct.
+
+  [ Michael Webster ]
+  * status icons: Support multiple icons from the same process.
+
+  [ Clement Lefebvre ]
+  * Revert "docs: Generate html automatically"
+  * Add a makedoc script to update docs/reference
+  * Update reference docs
+
+  [ Stephen Collins ]
+  * xapp-icon-chooser-dialog.c: color the symbolic icons properly and fix hidpi (#79)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 12 Nov 2019 11:12:12 +0100
+
+xapp (1.4.9) tina; urgency=medium
+
+  [ Michael Webster ]
+  * Fix a couple of copy/paste mistakes.
+  * xapp-icon-chooser-button.c: Only create the chooser dialog when needed.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 20 Aug 2019 10:52:32 +0200
+
+xapp (1.4.8) tina; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 10 Jul 2019 11:10:06 +0200
+
+xapp (1.4.7) tina; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 23 Jun 2019 15:24:11 +0200
+
+xapp (1.4.6) tina; urgency=medium
+
+  [ Stephen Collins ]
+  * xapp-icon-chooser-button.c: make dialog inherit modal state (#64)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 14 Jun 2019 12:00:33 +0100
+
+xapp (1.4.5) tessa; urgency=medium
+
+  * l10n: Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 11 Dec 2018 14:21:26 +0000
+
+xapp (1.4.4) tessa; urgency=medium
+
+  * Update translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Nov 2018 18:16:32 +0000
+
+xapp (1.4.3) tessa; urgency=medium
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog.c: Don't deep copy the category's icon list, just shallow copy and only free the strings once.  This is faster.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 27 Nov 2018 17:24:54 +0000
+
+xapp (1.4.2) tessa; urgency=medium
+
+  [ Michael Webster ]
+  * XAppGtkWindow: make derivable type.
+  * xapp-icon-chooser-dialog: use XAppGtkWindow as a parent class, make the default window size slightly taller to prevent a category scroll bar under typical situations, remove the skip-taskbar hint in the test script.
+  * xapp-gtk-window.c: Fix previous commit, initialize priv.
+  * xapp-icon-chooser-dialog.c: Give the window the title 'Choose an icon'.
+  * various improvements (#61)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog.c: Only display icons that belong to contexts.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Nov 2018 10:03:21 +0000
+
+xapp (1.4.1) tessa; urgency=medium
+
+  [ Stephen Collins ]
+  * icon chooser dialog: Prevent the dialog from being destroyed when the window close button is clicked. This was causing an issue where the dialog will not reopen in some cases. (#56)
+  * icon chooser button: fix image not updating when the icon property is set (#57)
+  * icon chooser dialog: initialize the default value for the allow_paths property. it was causing file paths to not work when the property wasn't set, even though the browse button was showing (#59)
+  * icon chooser button: prevent string pointer issues when calling icon_… (#58)
+  * icon chooser button: enforce image size when using paths
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-button.h: add missing public method and fix annotation for it.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 12 Nov 2018 15:13:01 +0000
+
+xapp (1.4.0) tessa; urgency=medium
+
+  [ JosephMcc ]
+  * Add an XAppStackSidebar widget (#45)
+  * stack-sidear: Simplify a bit
+  * stack-sidebar: Allow using in Glade
+
+  [ Michael Webster ]
+  * xapp-stack-sidebar.c: Set our internal children visible during construction.
+
+  [ JosephMcc ]
+  * icons: Add new icons for the nemo preferences window
+  * prefs-window: Use XAppStackSidebar
+
+  [ Stephen Collins ]
+  * Add an icon chooser dialog (#51)
+
+  [ JosephMcc ]
+  * icon-chooser: Do a bit of restyling (#52)
+
+  [ Fabio Fantoni ]
+  * Improve debian packaging (#42)
+
+  [ Stephen Collins ]
+  * fix segfault in icon chooser dialog and ensure a category is always selected (#54)
+  * Add an icon chooser button. Displays an image of the icon and opens the icon chooser dialog on click. (#53)
+
+  [ JosephMcc ]
+  * prefs-window: Restyle to better match other dialogs (#55)
+
+  [ Michael Webster ]
+  * xapp-icon-chooser-dialog: include the generated enums header in the .c file so it does not break C application compilation.
+  * xapp-icon-chooser-dialog: Add xapp_icon_chooser_dialog_add_button().
+
+  [ Clement Lefebvre ]
+  * l10n: Add makepot and de-couple POT from build system
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 30 Oct 2018 15:26:24 +0000
+
+xapp (1.2.2) tara; urgency=medium
+
+  [ Fabio Fantoni ]
+  * circleci: remove mint18 job (#41)
+
+  [ Michael Webster ]
+  * xapp-gtk-window.c: Check for x11 at a more appropriate time.
+
+  [ Clement Lefebvre ]
+  * Pastebin: Replace gist with termbin
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 17 Jul 2018 09:35:34 +0200
+
+xapp (1.2.1) tara; urgency=medium
+
+  [ Michael Webster ]
+  * icons: Add category-search-symbolic
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 06 May 2018 14:34:17 +0100
+
+xapp (1.2.0) tara; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Add CI configuration
+
+  [ Michael Webster ]
+  * Build: Switch to Meson (#34)
+  * docs/meson.build: split mkdb args properly. (fixes arch build)
+  * Fix post-install script shebang, remove the schema file from translation tracking.
+  * build: make docs optional, but enabled in debian build.  Add deprecated warnings option as well.
+  * xapp-gtk-window.c: use gdk_error_trap_pop_ignored to quiet build warning.
+  * xapp-gtk-window.c: Skip x11 calls if we're not running an x session.
+  * xapp-gtk-window.c: only do an x11 check once, cache the result.
+
+  [ JosephMcc ]
+  * prefs-window: Remove a stray separator
+
+  [ Michael Webster ]
+  * build: Fix pkg-config generation to require header-file-included libs (fixes CI build for nemo)
+
+  [ NikoKrause ]
+  * Add media-mount-symbolic icon (#37)
+  * extract/compress icons for nemo-fileroller (#38)
+
+  [ Fabio Fantoni ]
+  * debian: small improvements about python
+  * debian: wrap-and-sort -bst
+  * update debian/copyright
+  * Bump debhelper build-dep and compat to 10
+  * add debian/not-installed
+  * Drop dh's parallel arg (no longer needed with dh >= 10)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 16 Apr 2018 15:39:24 +0100
+
+xapp (1.0.4) sylvia; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Packaging: Change description
+
+  [ Michael Webster ]
+  * Add xapp-gtk-utils.c/.h
+  * Remove extra spaces inserted by clandestine foreign hackers.
+  * Add XAppGtkWindow, with methods that shadow GtkWindow's icon setting ones.  This way, programs only need to change the window class, rather than adding extra code.
+  * xapp-gtk-window: Add wrapper functions for GtkWindow subclasses.
+  * xapp-gtk-window.*: Fix argument type for wrapper function.
+  * xapp-gtk-window: Add progress features, refactor, add demo script for XAppGtkWindow.
+  * xapp-gtk-window test script: Add an animate button (to test real-world effects on system responsiveness while an operation is running.)
+  * all: Fix build warnings, documentation.
+  * xapp-gtk-window: Make xapp_gtk_window_new() handle the same arguments as gtk_window_new().
+  * all: Allow XAppGtkWindows to be used in builder (ui) files and in Glade.
+  * update some files modified by the build
+  * pygobject/XApp.py: simplify and add an explanation as to why this file is here (to remind me in a year.)
+  * xapp-gtk-window.c: Add xid-based functions
+  * xapp-gtk-window: Move the xlib include into the .c file - it can cause namespace collisions (notably synaptic.)  It's ok to treat "Window" as an unsigned long, because that's what they are.
+
+  [ Clement Lefebvre ]
+  * xapp-gtk-window: Trap X errors when setting progress
+  * Add a VAPI file to support Vala
+  * Add a dependency on libxkbfile-dev for -dev pkg and build-dep.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 24 Oct 2017 12:06:19 +0100
+
+xapp (1.0.3) sonya; urgency=medium
+
+  [ Michael Webster ]
+  * Fix build
+  * xapp-kbd-layout-controller - update test script to reflect current api/intent
+
+  [ Clement Lefebvre ]
+  * Review licensing
+  * Handle exceptions in usr/bin/upload-system-info
+
+  [ JosephMcc ]
+  * Add a couple of symbolic pane visibility icons
+  * icons: Add an icon for regex-search
+
+  [ leigh123linux ]
+  * switch to the correct python deps
+
+  [ Michael Webster ]
+  * xapp-kbd-layout-controller.c: Allow up to 3 character labels.
+
+  [ JosephMcc ]
+  * Complete our set of pane icons
+  * Add support for building gtk-doc
+
+  [ leigh123linux ]
+  * Migrate away from gnome-common deprecated vars and macros
+  * Use python3 as all scripts are in python3
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 03 May 2017 11:27:21 +0100
+
+xapp (1.0.2) serena; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Implement window blanking
+  * Continued implementation of monitor blanking
+  * Display: properly initialize values and add a function to know if monitors are blanked
+
+  [ JosephMcc ]
+  * xapp-display.c: Add a missing cast
+
+  [ Clement Lefebvre ]
+  * Added some symbolic icons needed by Xed
+
+  [ JosephMcc ]
+  * icons: Redesign the xapp-searchbar icons
+  * formatting: Clean up code formatting
+
+  [ Emmanuel ]
+  * properly declare variable used in for loops
+
+  [ JosephMcc ]
+  * xapp-display: Add a missing cast
+  * xapp-display: Don't use deprecated gtk_widget_modify_bg
+
+  [ Michael Webster ]
+  * debian: Fix multiarch location of typelib file, don't strip debug symbols.
+  * Add XAppKbdLayoutController - this is a wrapper around libgnomekbd api to provide unique icons for each layout.
+  * Update debian/control
+  * Cleanup some leftover dependencies, some unneeded files, clean up gir scanning.
+
+  [ Clement Lefebvre ]
+  * Added /usr/bin/pastebin and /usr/bin/upload-system-info
+  * Pastebin: Added support for fpaste
+  * libxapp: Rename XAppDisplay -> XAppMonitorBlanker
+  * Create README.md
+
+  [ leigh123linux ]
+  * Fix Warnings
+
+  [ Michael Webster ]
+  * Rework XAppKbdLayoutController:
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Nov 2016 15:56:44 +0000
+
+xapp (1.0.1) sarah; urgency=medium
+
+  * Initial version
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Aug 2016 11:59:50 +0100

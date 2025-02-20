@@ -1,0 +1,717 @@
+mint-common (2.4.6) xia; urgency=medium
+
+  [ Michael Webster ]
+  * _flatpak.py: Fix error when loading a flatpakref file.
+  * _flatpak.py: Don't try to pass a NULL branch to construct a FlatpakRemoteRef.
+  * appstream_pool.py: Check for compressed xml, and return source screenshots if no thumbnails are available.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 07 Feb 2025 18:45:21 +0000
+
+mint-common (2.4.5) xia; urgency=medium
+
+  [ Michael Webster ]
+  * appstream: Check for .desktop suffixed ids also.
+  * _apt.py: Filter out kernel-related packages.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 05 Jan 2025 11:13:26 +0000
+
+mint-common (2.4.4) xia; urgency=medium
+
+  [ Michael Webster ]
+  * Appstream: Use exact name match for application lookups.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 19 Dec 2024 16:19:57 +0000
+
+mint-common (2.4.3) xia; urgency=medium
+
+  [ Michael Webster ]
+  * appstream_pool.py: Use en_US when loading appstream, if no other locale is set.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Dec 2024 16:27:38 +0000
+
+mint-common (2.4.2) xia; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Don't cache the appstream package at runtime, it can be refreshed and become invalid.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 06 Dec 2024 10:42:37 +0000
+
+mint-common (2.4.1) xia; urgency=medium
+
+  [ Michael Webster ]
+  * Fix Flatpak addon lookup.
+  * flatpak: More work on addon detection.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 03 Dec 2024 10:17:41 +0000
+
+mint-common (2.4.0) xia; urgency=medium
+
+  [ Michael Webster ]
+  * Use xmlb instead of AppStream for working with flatpak appstream files.
+  * flatpaks: Don't process installed refs until appstream data has been loaded.
+  * Fix a warning message.
+  * Allow pkginfo lookup to accept FlatpakRef string in addition to a simple name.
+  * Add mint-remove-flatpak.
+  * Let xmlb load only desired language nodes, instead of relying on language-restricted xpath queries.
+  * Always check for updated appstream at startup.
+  * Add keywords to the cache.
+
+  [ fredcw ]
+  * mint-remove-application: only disallow removal ... (#59)
+
+  [ Soumya Roy ]
+  * _apt.py : Used setdefault method to initialize sections dictionary (#60)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 26 Nov 2024 10:25:48 +0000
+
+mint-common (2.3.9) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * flatpak: Use a set() instead of array when gathering locale variants.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 04 Aug 2024 13:46:53 +0100
+
+mint-common (2.3.8) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * flatpaks: backport locale utility function from appstream 1.0+.
+  * pkginfo: Fall back to html2text if the appstream library doesn't contain AppStream.markup_convert().
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 26 Jul 2024 17:33:56 +0100
+
+mint-common (2.3.7) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * pkgInfo: Filter out apt packages without a candidate, they're broken to mintinstall/mintcommon.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 19 Jul 2024 14:53:20 +0100
+
+mint-common (2.3.6) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * flatpaks: Also check <metadata> for the verified tag.
+  * flatpak: Get the developer name for the current locale.
+  * pkginfo: Fix flatpak description formatting.
+  * flatpak: Don't add installed runtimes to the in-memory package cache.
+  * pkginfo: Use AppStream's function for formatting flatpak descriptions.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 17 Jul 2024 15:59:26 +0100
+
+mint-common (2.3.5) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * cache: Don't search for apt packages with the flatpak lookup.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 06 Jul 2024 00:25:18 +0100
+
+mint-common (2.3.4) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * Fix cache lookup for incomplete flatpak ref strings.
+  * flatpaks: When updating the cache, fetch an updated appstream file before creating a remote Pool.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 05 Jul 2024 20:59:35 +0100
+
+mint-common (2.3.3) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * pkginfo: Initialize cached strings to None
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 18 Jun 2024 18:50:19 +0100
+
+mint-common (2.3.2) wilma; urgency=medium
+
+  [ Michael Webster ]
+  * polkit: Remove restrictions for remote/non-active sessions.
+  * flatpaks: Use AppStream and libxmlb instead of AppStreamGlib.
+  * Remove any addons when uninstalling a flatpak.
+  * cache.py: Add a schema version to the package cache.
+  * Installer: Performance-oriented improvements.
+  * cache.py: Save existing apt section info when updating flatpaks.
+  * debian/control: Update dependencies.
+  * Add .gitignore
+  * Simplify Xpath query for app verification update.
+  * _flatpak.py: Set resolve_addons when checking for addons to remove during flatpak uninstall.
+  * Cache the verified state of Flatpaks.
+  * _flatpak.py: Remove useless code, small cleanup.
+  * _flatpak.py: Fix wrong return type checking for addons.
+  * flatpak: Don't skip loading appstream data even if a repo is marked no-enumerate.
+  * flatpaks: Query xmlb data for a developer name and cache it.
+  * flatpak: Don't remove an EOL'd ref from a transaction unless a replacement is supplied.
+  * flatpaks: Prevent useless warning in _get_addon_refs_for_pkginfo().
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 16 Jun 2024 11:07:38 +0100
+
+mint-common (2.3.1) virginia; urgency=medium
+
+  [ Michael Webster ]
+  * _flatpak.py: Fix end-of-lifed-with-rebase handling.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 27 Nov 2023 13:52:36 +0000
+
+mint-common (2.3.0) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Add mint-translations to critical packages.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 26 Jun 2023 11:17:06 +0200
+
+mint-common (2.2.9) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Check if a local flatpak icon exists before trying to use it.
+  * More rework for flatpak icons.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 14 Jun 2023 09:21:28 +0200
+
+mint-common (2.2.8) victoria; urgency=medium
+
+  [ Michael Webster ]
+  * flatpaks: Skip no-enumerate remotes when loading appstream data.
+
+  [ hduelme ]
+  * replace equality None check with identity None check (#51)
+  * prevent NameError in process_full_apt_cache (#54)
+  * refactor _get_best_save_path (#55)
+
+  [ Michael Webster ]
+  * apt: Catch broken dependency errors and use a more appropriate task state.
+  * installer: Add a signal for when appstream is updated.
+  * installer: Make appstream callback optional.
+  * pkgInfo.py: Check the theme for APT app icons before looking in legacy locations.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Jun 2023 13:32:11 +0100
+
+mint-common (2.2.7) vera; urgency=medium
+
+  [ Michael Webster ]
+  * flatpaks: Prefer using a locally stored icon over a remote one, and return an icon of the correct size.
+  * flatpaks: Set the task status to unknown upon any error condition not already handled, so mintinstall knows how to react.
+  * _flatpak.py: Don't use gdk_threads_enter/leave.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 11 Jan 2023 11:34:11 +0000
+
+mint-common (2.2.6) vera; urgency=medium
+
+  [ Michael Webster ]
+  * Add workflow for actions.
+  * installer: Fix a couple of runtime errors.
+  * Fix error when there is a cache loading problem.
+  * Sanitize output from _apt.py.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Dec 2022 15:07:08 +0000
+
+mint-common (2.2.5) vera; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Clean up logging.
+  * Fix flatpak end-of-lifed-with-rebase signal.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 17 Dec 2022 12:08:34 +0000
+
+mint-common (2.2.4) vera; urgency=medium
+
+  [ Michael Webster ]
+  * flatpak: Remove any installed addons when removing an application.
+  * Disable auto-pinning of add-ons.
+  * flatpak: Add logging for update operations.
+  * flatpak: Handle a case where a new package must be installed during an update.
+  * flatpak: Implement FlatpakTransaction:add-remote and finish implementing :end-of-life-with-rebase.
+  * Fix progress and error handling.
+  * installer: Remove some useless code.
+  * cache: Don't destroy existing cache if it's for a specific package type.
+  * Don't store an empty appstream component, otherwise it will never be checked again.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 15 Dec 2022 12:53:00 +0000
+
+mint-common (2.2.3) vera; urgency=medium
+
+  [ Michael Webster ]
+  * aptdaemon.py: Go back to using aptdaemon's native confirmation dialog.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 03 Dec 2022 14:43:21 +0000
+
+mint-common (2.2.2) vera; urgency=medium
+
+  [ Michael Webster ]
+  * apt: Remove some dead code, fix error handling for critical packages.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 02 Dec 2022 17:19:26 +0000
+
+mint-common (2.2.1) vera; urgency=medium
+
+  [ Michael Webster ]
+  * Allow specifying a remote when searching for a package, provide a method to retrieve RemoteInfo objects, simplify package filtering.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 30 Nov 2022 14:13:00 +0000
+
+mint-common (2.2.0) vera; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Use the correct method for getting the app's homepage.
+
+  [ Clement Lefebvre ]
+  * mint-remove-application: Run in user mode
+
+  [ Michael Webster ]
+  * Refactor to get updates working with mintupdate (#45)
+
+  [ hduelme ]
+  * use double-quoted strings for docstrings (#50)
+  * replace trailing semicolon (#52)
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 29 Nov 2022 14:39:57 +0000
+
+mint-common (2.1.9) vanessa; urgency=medium
+
+  * Adapt to new PPA url
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 20 Sep 2022 14:03:34 +0100
+
+mint-common (2.1.8) vanessa; urgency=medium
+
+  [ fredcw ]
+  * Don't allow uninstall of a package if it has dependents (reverse dependencies) (#48)
+
+  [ Michael Webster ]
+  * Use debhelper-compat.
+
+  [ Clement Lefebvre ]
+  * l10n: Update POT
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 21 Jun 2022 14:58:20 +0200
+
+mint-common (2.1.7) una; urgency=medium
+
+  [ Stefan Schmidt ]
+  * Missing a closing tag, getting parsing error (#49)
+
+  [ Michael Webster ]
+  * aptdaemon.py: Run the client's cancel callback when authentication fails or is cancelled.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Mar 2022 18:41:09 +0000
+
+mint-common (2.1.6) una; urgency=medium
+
+  [ Michael Webster ]
+  * _flatpak.py: Check the remote appstream timestamp against the actual appstream archive's mtime.
+  * _apt.py: Filter out snapd, don't allow malformed packages to enter the cache.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 25 Nov 2021 15:09:27 +0000
+
+mint-common (2.1.5) uma; urgency=medium
+
+  [ Michael Webster ]
+  * pkgInfo.py: Prefer application-supplied icons before looking for them in the system theme.
+
+  [ Vincent Vermeulen ]
+  * Fix for dialogs.py to use translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 03 Jun 2021 13:01:08 +0100
+
+mint-common (2.1.4) ulyssa; urgency=medium
+
+  [ JosephMcc ]
+  * _flatpak.py: Add missing gi.require_version()
+
+  [ okaestne ]
+  * dialogs.py: set up gettext only locally by using class-based gettext API
+  * additionalfiles.py: don't install temporary gettext domains globally
+  * additionalfiles.py: close opened files
+
+  [ Michael Webster ]
+  * installer: attempt to filter out transitional packages in apt.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 30 Nov 2020 14:58:55 +0000
+
+mint-common (2.1.3) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * installer/_apt.py: Send all package names to the aptdaemon for an install, instead of just the selected package.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 21 Jun 2020 13:56:25 +0100
+
+mint-common (2.1.2) ulyana; urgency=medium
+
+  [ JosephMcc ]
+  * pkgInfo.py: Add a couple missing gi.require_version()
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 15 May 2020 10:32:01 +0100
+
+mint-common (2.1.1) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * debian/control: add appstream-glib gir file to depends.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 14 May 2020 20:33:58 +0100
+
+mint-common (2.1.0) ulyana; urgency=medium
+
+  [ Michael Webster ]
+  * (installer) _apt.py: adapt to python-apt 1.9
+  * cache.py: Catch exception when reading the initial-status.gz file.
+  * dialogs.py: Increase the install confirmation/additional packages dialog's default size.
+  * aptdaemon.py: Use the installer's ChangesConfirmDialog instead of AptConfirmDialog.
+  * installer: Use AppStreamGlib instead of AppStream.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 21 Apr 2020 15:30:46 +0100
+
+mint-common (2.0.9) tricia; urgency=medium
+
+  * additionalfiles: Only generate translations for existing MOs
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sat, 16 Nov 2019 12:05:13 +0100
+
+mint-common (2.0.8) tina; urgency=medium
+
+  [ Michael Webster ]
+  * _flatpak.py: Create a remote ref directly when installing from a flatpakref file, rather than parsing out a basic ref first.  This handles missing (and possibly unnecessary) info from the ref file.
+  * installer.py: Don't skip no-enumerate remotes when checking for differences between the installer's remote list and the FlatpakInstallation's.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 25 Oct 2019 10:14:11 +0100
+
+mint-common (2.0.7) tina; urgency=medium
+
+  [ Michael Webster ]
+  * installer: Use json instead of pickle for the package cache. (#37)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 04 Oct 2019 10:03:11 +0100
+
+mint-common (2.0.6) tina; urgency=medium
+
+  [ Michael Webster ]
+  * debian/control: remove python dependency
+  * _flatpak.py: Don't fail an entire job if one package fails to install (#36)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 23 Sep 2019 10:31:32 +0100
+
+mint-common (2.0.5) tina; urgency=medium
+
+  [ Michael Webster ]
+  * dialogs: Set keep-above and skip-taskbar on confirm dialogs when there is no parent window (such as when removing apps from the menu).
+  * Use appstream api to choose flatpak icons.
+  * pkgInfo.py: allow appstream 'remote' icons
+  * pkgInfo.py: Match apt packages against icons ending in -icon from the app-install folder.
+  * _flatpak.py: Ignore BaseApp packages.
+  * installer: Remove logging line, replace MintInstall logging  references to simply "Installer"
+  * _flatpak.py: If no apps are installed, don't try to install theme packages during an update (via mintinstall-update-flatpak).
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 19 Aug 2019 18:15:20 +0200
+
+mint-common (2.0.4) tina; urgency=medium
+
+  * Remove Python 3.6 code
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Aug 2019 13:04:44 +0200
+
+mint-common (2.0.3) tina; urgency=medium
+
+  * Remove python 3.6 code
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 05 Aug 2019 11:29:52 +0200
+
+mint-common (2.0.2) tina; urgency=medium
+
+  [ Corbin ]
+  * prevent flatpak from always installing remote repo & fix typo
+
+  [ Michael Webster ]
+  * _flatpak.py: Add a bit more logging to flatpakref handling, fix an indentation problem.
+  * _flatpak.py: Fix condition for ignoring user auth cancel when adding a remote, fix some warnings.
+  * Add a script to test installer, imports don't work properly anymore when executing installer.py on its own.
+  * _flatpak.py: Add function to return system-matching theme packages for the mintinstall-update-flatpak script.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 25 Jul 2019 10:31:46 +0200
+
+mint-common (2.0.1) tina; urgency=medium
+
+  * Remove version module
+  * apt_changelog fixes
+  * mint-remove-application: Sanitize process/subprocess module calls
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 30 Jun 2019 15:20:32 +0200
+
+mint-common (2.0.0) tessa; urgency=medium
+
+  [ gm10 ]
+  * Move code into python modules (#30)
+  * Add apt_changelog module (#31)
+
+  [ Clement Lefebvre ]
+  * l10n: Fix makepot and update POT
+  * Remove unused script
+  * Turn version.py into a module
+  * Remove module version
+  * Turn additionalfiles.py into a module
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 27 Feb 2019 11:44:15 +0000
+
+mint-common (1.3.4) tara; urgency=medium
+
+  [ Michael Webster ]
+  * Use auth_admin for polkit authentication - this will require an admin user, instead of allowing the current user to perform elevated actions.
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 09 Aug 2018 17:45:15 +0200
+
+mint-common (1.3.3) tara; urgency=medium
+
+  [ monsta ]
+  * fix runtime dependencies (#28)
+  * remove unused scripts (#27)
+
+  [ Clement Lefebvre ]
+  * Fix flatpak removals
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 08 Jun 2018 12:36:26 +0100
+
+mint-common (1.3.2) tara; urgency=medium
+
+  * Apt: Force file installation when using install_file()
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 07 Jun 2018 11:52:29 +0100
+
+mint-common (1.3.1) tara; urgency=medium
+
+  [ Clement Lefebvre ]
+  * additionalfiles: Add the ability to generate polkit policies
+
+  [ monsta ]
+  * remove ancient launch_browser_as.py script (#26)
+
+  [ Clement Lefebvre ]
+  * Add support to install local .deb files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 06 Jun 2018 11:58:25 +0100
+
+mint-common (1.3.0) tara; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Remove progress arguments in synaptic call.
+  * Remove mint-which-launcher.py
+  * Provide an APTdaemon interface in Python3
+  * AptDaemon: Add the ability to remove packages
+  * AptDaemon: Call finished callback when the user cancel the installation
+  * AptDaemon: Improve callbacks
+  * Migrate mint-remove-application to python3/aptdaemon/pkexec
+
+  [ Michael Webster ]
+  * mint-remove-application.py: let mintinstall's removal script attempt to uninstall flatpak apps.
+
+  [ Clement Lefebvre ]
+  * l10n: Update files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 May 2018 11:47:25 +0100
+
+mint-common (1.2.9) sylvia; urgency=medium
+
+  * Focus default buttons when using Gtk.MessageDialog.
+  * Remove nemo send-by-email action (moved to Nemo)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 24 Oct 2017 11:01:25 +0100
+
+mint-common (1.2.8) sonya; urgency=medium
+
+  * Additionalfiles: Support appending to file
+  * Additionalfiles: Set LANGUAGE rather than LANG, only set comment if not None
+  * l10n: Generate additional files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 07 May 2017 13:20:21 +0100
+
+mint-common (1.2.7) serena; urgency=medium
+
+  [ xenopeek ]
+  * version.py: improve performance and update to Python 3 (v2)
+
+ -- Clement Lefebvre <root@linuxmint.com>>  Wed, 02 Nov 2016 14:09:38 +0000
+
+mint-common (1.2.6) sarah; urgency=medium
+
+  * Fixed small bugs in mint-remove-applications
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 16 Jun 2016 18:18:55 +0100
+
+mint-common (1.2.5) sarah; urgency=medium
+
+  [ Michael Webster ]
+  * additionalfiles.py: include keyword translations if provided
+
+  [ Clement Lefebvre ]
+  * Small fixes in usr/lib/linuxmint/common/mint-remove-application.py
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 30 May 2016 12:25:00 +0100
+
+mint-common (1.2.4) sarah; urgency=medium
+
+  [ Daniel Alley ]
+  * Removed static configobj library
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue, 10 May 2016 18:30:26 +0100
+
+mint-common (1.2.3) sarah; urgency=medium
+
+  * Updated generated files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 21 Apr 2016 17:04:27 +0100
+
+mint-common (1.2.2) sarah; urgency=medium
+
+  [ Clement Lefebvre ]
+  * Removed entrydialog (no longer used by mint-tools)
+
+  [ Daniel Alley ]
+  * PEP8 formatting
+  * updated debian/control (was out of date)
+  * fixed debian/control typo
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 19 Feb 2016 12:19:34 +0000
+
+mint-common (1.2.1) sarah; urgency=medium
+
+  * Changed shebangs to #!/usr/bin/python2
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 11 Jan 2016 15:59:47 +0000
+
+mint-common (1.2.0) rosa; urgency=medium
+
+  * Fixed packaging regression in 1.1.9
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 08 Nov 2015 22:16:41 +0000
+
+mint-common (1.1.9) rosa; urgency=medium
+
+  [ darealshinji ]
+  * delete temporarily created build files
+  * update Debian files
+  * add missing shebang to shell script
+  * mention license of configobj.py
+
+  [ Clement Lefebvre ]
+  * Prefer bash
+  * [darealshinji] delete python bytecode
+  * Updated desktop files
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 06 Nov 2015 16:54:48 +0000
+
+mint-common (1.1.8) betsy; urgency=medium
+
+  * Changed the icon for the thunderbird nemo action
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed, 18 Feb 2015 10:13:07 +0100
+
+mint-common (1.1.7) betsy; urgency=medium
+
+  * Removed /usr/share/pixmaps/faces/user-generic.png (provided by mdm)
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 30 Jan 2015 09:58:18 +0100
+
+mint-common (1.1.6) betsy; urgency=medium
+
+  * Updated user pictures in /usr/share/pixmaps/faces
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 30 Jan 2015 09:52:34 +0100
+
+mint-common (1.1.5) qiana; urgency=medium
+
+  * Support GenericName in additionalfiles.py
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 04 May 2014 13:25:19 +0100
+
+mint-common (1.1.4) qiana; urgency=medium
+
+  * Improved additionalfiles.py
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 04 May 2014 02:22:41 +0100
+
+mint-common (1.1.3) qiana; urgency=medium
+
+  * Updated desktop files
+  * provides additionalfiles.py
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 04 May 2014 01:39:53 +0100
+
+mint-common (1.1.2) qiana; urgency=medium
+
+  * Correct the syntax for Thunderbird file attachments
+  * Added mint-remove-application.py and cinnamon-remove-application
+  * Added dep on synaptic
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 14 Apr 2014 13:07:20 +0100
+
+mint-common (1.1.1) petra; urgency=low
+
+  * Improved generate_additional_files.py, refreshed translations for email nemo action
+
+ -- Clement Lefebvre <root@linuxmint.com>  Sun, 24 Nov 2013 19:16:27 +0000
+
+mint-common (1.1.0) olivia; urgency=low
+
+  * Added nemo action for thunderbird
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 22 Aug 2013 14:28:58 +0100
+
+mint-common (1.0.9) nadia; urgency=low
+
+  * Added a collection of faces icons
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 07 Jan 2013 16:04:21 +0000
+
+mint-common (1.0.8) maya; urgency=low
+
+  * Added entrydialog
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 30 Jul 2012 14:28:05 +0100
+
+mint-common (1.0.7) maya; urgency=low
+
+  * Added env_check
+
+ -- Clement Lefebvre <root@linuxmint.com>  Mon, 25 Jun 2012 14:30:28 +0100
+
+mint-common (1.0.6) lisa; urgency=low
+
+  * Use gksu in KDE if it's installed
+
+ -- Clement Lefebvre <root@linuxmint.com>  Thu, 15 Dec 2011 11:54:24 +0000
+
+mint-common (1.0.5) helena; urgency=low
+
+  * Added dependency on mint-translations
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue,  3 Nov 2009 12:23:00 +0000
+
+mint-common (1.0.4) helena; urgency=low
+
+  * Changed translation framework
+
+ -- Clement Lefebvre <root@linuxmint.com>  Tue,  3 Nov 2009 11:38:00 +0000
+
+mint-common (1.0.3) helena; urgency=low
+
+  * Added launch_browser_as.py
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri,  30 Oct 2009 17:43:00 +0000
+
+mint-common (1.0.2) helena; urgency=low
+
+  * Added a lot of stuff
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed,  7 Oct 2009 16:41:00 +0000
+
+mint-common (1.0.1) helena; urgency=low
+
+  * Added Linux Mint logo
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed,  7 Oct 2009 16:24:00 +0000
+
+mint-common (1.0.0) helena; urgency=low
+
+  * Initial release
+
+ -- Clement Lefebvre <root@linuxmint.com>  Wed,  7 Oct 2009 14:18:00 +0000
+

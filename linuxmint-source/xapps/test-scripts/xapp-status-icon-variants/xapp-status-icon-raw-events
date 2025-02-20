@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+
+import gi
+gi.require_version('XApp', '1.0')
+from gi.repository import XApp, Gtk, Gdk
+from gi.repository import GLib, GObject
+import sys
+
+"""
+This variant tests button-press-event and button-release-event with no menus assigned -
+it must do all menu handling itself.
+"""
+
+class App(GObject.Object):
+
+    def __init__(self):
+        super(App, self).__init__()
+        self.status_icon = XApp.StatusIcon()
+        self.status_icon.connect("state-changed", self.on_icon_state_changed)
+
+        self.status_icon.set_icon_name("folder-symbolic")
+        self.status_icon.set_tooltip_text("Testing raw button press and release events")
+        self.status_icon.set_label("label 1")
+        self.status_icon.set_visible(True)
+
+        self.counter = 1
+
+        self.menu = Gtk.Menu()
+        self.menu.append(Gtk.MenuItem.new_with_label("Engage the hyperdrive"))
+        self.menu.append(Gtk.SeparatorMenuItem())
+        self.menu.append(Gtk.MenuItem.new_with_label("It's a trap!"))
+        self.menu.show_all()
+
+        self.status_icon.connect("button-press-event", self.on_button_press)
+        self.status_icon.connect("button-release-event", self.on_button_release)
+
+        GLib.timeout_add_seconds(2, self.on_timeout_cb)
+
+    def on_icon_state_changed(self, icon, new_state):
+        print("Icon state changed - the state is now: %s" % new_state)
+
+    def on_timeout_cb(self):
+        self.counter += 1
+        self.status_icon.set_label("label %d" % self.counter)
+        return True
+
+    def on_button_press(self, status_icon, x, y, button, time, position_type):
+        print("Mouse button %d was pressed at %d %d" % (button, x, y))
+        self.counter = 0
+        self.status_icon.set_label("label %d" % self.counter)
+
+    def on_button_release(self, status_icon, x, y, button, time, position_type):
+        print("Mouse button %d was released at %d %d" % (button, x, y))
+        if button == 3:
+            def position_menu_cb(menu, pointer_x, pointer_y, user_data):
+                [x, y, position] = user_data;
+                if (position_type == Gtk.PositionType.BOTTOM):
+                    y = y - menu.get_allocation().height;
+                if (position_type == Gtk.PositionType.RIGHT):
+                    x = x - menu.get_allocation().width;
+                return (x, y, False)
+
+            device = Gdk.Display.get_default().get_device_manager().get_client_pointer()
+
+            self.menu.popup_for_device(device, None, None, position_menu_cb, [x, y, position_type], button, 0)
+
+if __name__ == '__main__':
+    GLib.setenv ("G_MESSAGES_DEBUG", "all", True)
+    app = App()
+    try:
+        GLib.MainLoop().run()
+    except KeyboardInterrupt:
+        pass
+    sys.exit(0)

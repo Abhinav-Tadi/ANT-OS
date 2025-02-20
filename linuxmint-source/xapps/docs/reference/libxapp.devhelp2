@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<book xmlns="http://www.devhelp.net/book" title="XApp Reference Manual" link="index.html" author="" name="libxapp" version="2" language="c">
+  <chapters>
+    <sub name="API reference" link="ch01.html">
+      <sub name="XAppDarkModeManager" link="XAppDarkModeManager.html"/>
+      <sub name="XAppFavorites" link="XAppFavorites.html"/>
+      <sub name="XAppGtkWindow" link="XAppGtkWindow.html"/>
+      <sub name="XAppGpuOffloadHelper" link="XAppGpuOffloadHelper.html"/>
+      <sub name="XAppIconChooserButton" link="XAppIconChooserButton.html"/>
+      <sub name="XAppIconChooserDialog" link="XAppIconChooserDialog.html"/>
+      <sub name="XAppKbdLayoutController" link="XAppKbdLayoutController.html"/>
+      <sub name="XAppMonitorBlanker" link="XAppMonitorBlanker.html"/>
+      <sub name="XAppPreferencesWindow" link="XAppPreferencesWindow.html"/>
+      <sub name="XAppStackSidebar" link="XAppStackSidebar.html"/>
+      <sub name="XAppStatusIcon" link="XAppStatusIcon.html"/>
+      <sub name="XAppStatusIconMonitor" link="XAppStatusIconMonitor.html"/>
+      <sub name="XAppObjectManagerClient" link="XAppObjectManagerClient.html"/>
+      <sub name="xapp-util" link="libxapp-xapp-util.html"/>
+      <sub name="XAppVisibilityGroup" link="XAppVisibilityGroup.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="function" name="xapp_dark_mode_manager_new ()" link="XAppDarkModeManager.html#xapp-dark-mode-manager-new" since="2.6"/>
+    <keyword type="macro" name="XAPP_TYPE_DARK_MODE_MANAGER" link="XAppDarkModeManager.html#XAPP-TYPE-DARK-MODE-MANAGER:CAPS"/>
+    <keyword type="struct" name="XAppDarkModeManager" link="XAppDarkModeManager.html#XAppDarkModeManager-struct"/>
+    <keyword type="function" name="xapp_favorites_get_default ()" link="XAppFavorites.html#xapp-favorites-get-default" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_get_favorites ()" link="XAppFavorites.html#xapp-favorites-get-favorites" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_get_n_favorites ()" link="XAppFavorites.html#xapp-favorites-get-n-favorites" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_find_by_display_name ()" link="XAppFavorites.html#xapp-favorites-find-by-display-name" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_find_by_uri ()" link="XAppFavorites.html#xapp-favorites-find-by-uri" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_add ()" link="XAppFavorites.html#xapp-favorites-add" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_remove ()" link="XAppFavorites.html#xapp-favorites-remove" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_launch ()" link="XAppFavorites.html#xapp-favorites-launch" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_rename ()" link="XAppFavorites.html#xapp-favorites-rename" since="2.0"/>
+    <keyword type="function" name="xapp_favorite_info_copy ()" link="XAppFavorites.html#xapp-favorite-info-copy"/>
+    <keyword type="function" name="xapp_favorite_info_free ()" link="XAppFavorites.html#xapp-favorite-info-free"/>
+    <keyword type="function" name="XAppFavoritesItemSelectedCallback ()" link="XAppFavorites.html#XAppFavoritesItemSelectedCallback"/>
+    <keyword type="function" name="xapp_favorites_create_menu ()" link="XAppFavorites.html#xapp-favorites-create-menu" since="2.0"/>
+    <keyword type="function" name="xapp_favorites_create_actions ()" link="XAppFavorites.html#xapp-favorites-create-actions" since="2.0"/>
+    <keyword type="macro" name="XAPP_TYPE_FAVORITES" link="XAppFavorites.html#XAPP-TYPE-FAVORITES:CAPS"/>
+    <keyword type="struct" name="struct XAppFavoriteInfo" link="XAppFavorites.html#XAppFavoriteInfo-struct"/>
+    <keyword type="struct" name="XAppFavorites" link="XAppFavorites.html#XAppFavorites-struct"/>
+    <keyword type="signal" name="The “changed” signal" link="XAppFavorites.html#XAppFavorites-changed"/>
+    <keyword type="function" name="xapp_gtk_window_new ()" link="XAppGtkWindow.html#xapp-gtk-window-new"/>
+    <keyword type="function" name="xapp_gtk_window_set_icon_name ()" link="XAppGtkWindow.html#xapp-gtk-window-set-icon-name"/>
+    <keyword type="function" name="xapp_gtk_window_set_icon_from_file ()" link="XAppGtkWindow.html#xapp-gtk-window-set-icon-from-file"/>
+    <keyword type="function" name="xapp_gtk_window_set_progress ()" link="XAppGtkWindow.html#xapp-gtk-window-set-progress"/>
+    <keyword type="function" name="xapp_gtk_window_set_progress_pulse ()" link="XAppGtkWindow.html#xapp-gtk-window-set-progress-pulse"/>
+    <keyword type="function" name="xapp_set_window_icon_name ()" link="XAppGtkWindow.html#xapp-set-window-icon-name"/>
+    <keyword type="function" name="xapp_set_window_icon_from_file ()" link="XAppGtkWindow.html#xapp-set-window-icon-from-file"/>
+    <keyword type="function" name="xapp_set_window_progress ()" link="XAppGtkWindow.html#xapp-set-window-progress"/>
+    <keyword type="function" name="xapp_set_window_progress_pulse ()" link="XAppGtkWindow.html#xapp-set-window-progress-pulse"/>
+    <keyword type="function" name="xapp_set_xid_icon_name ()" link="XAppGtkWindow.html#xapp-set-xid-icon-name"/>
+    <keyword type="function" name="xapp_set_xid_icon_from_file ()" link="XAppGtkWindow.html#xapp-set-xid-icon-from-file"/>
+    <keyword type="function" name="xapp_set_xid_progress ()" link="XAppGtkWindow.html#xapp-set-xid-progress"/>
+    <keyword type="function" name="xapp_set_xid_progress_pulse ()" link="XAppGtkWindow.html#xapp-set-xid-progress-pulse"/>
+    <keyword type="macro" name="XAPP_TYPE_GTK_WINDOW" link="XAppGtkWindow.html#XAPP-TYPE-GTK-WINDOW:CAPS"/>
+    <keyword type="struct" name="struct XAppGtkWindowClass" link="XAppGtkWindow.html#XAppGtkWindowClass"/>
+    <keyword type="struct" name="XAppGtkWindow" link="XAppGtkWindow.html#XAppGtkWindow-struct"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get_sync ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get-sync" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_is_ready ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-is-ready" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_is_offload_supported ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-is-offload-supported" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get_n_gpus ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get-n-gpus" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get_offload_infos ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get-offload-infos" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get_default_info ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get-default-info" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_offload_helper_get_info_by_id ()" link="XAppGpuOffloadHelper.html#xapp-gpu-offload-helper-get-info-by-id" since="2.6"/>
+    <keyword type="function" name="xapp_gpu_info_get_shell_env_prefix ()" link="XAppGpuOffloadHelper.html#xapp-gpu-info-get-shell-env-prefix"/>
+    <keyword type="macro" name="XAPP_TYPE_GPU_OFFLOAD_HELPER" link="XAppGpuOffloadHelper.html#XAPP-TYPE-GPU-OFFLOAD-HELPER:CAPS"/>
+    <keyword type="struct" name="struct XAppGpuInfo" link="XAppGpuOffloadHelper.html#XAppGpuInfo-struct"/>
+    <keyword type="struct" name="XAppGpuOffloadHelper" link="XAppGpuOffloadHelper.html#XAppGpuOffloadHelper-struct"/>
+    <keyword type="signal" name="The “ready” signal" link="XAppGpuOffloadHelper.html#XAppGpuOffloadHelper-ready"/>
+    <keyword type="function" name="xapp_icon_chooser_button_new ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-new"/>
+    <keyword type="function" name="xapp_icon_chooser_button_new_with_size ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-new-with-size"/>
+    <keyword type="function" name="xapp_icon_chooser_button_set_icon_size ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-set-icon-size"/>
+    <keyword type="function" name="xapp_icon_chooser_button_set_icon ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-set-icon"/>
+    <keyword type="function" name="xapp_icon_chooser_button_set_default_category ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-set-default-category"/>
+    <keyword type="function" name="xapp_icon_chooser_button_get_icon ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-get-icon"/>
+    <keyword type="function" name="xapp_icon_chooser_button_get_dialog ()" link="XAppIconChooserButton.html#xapp-icon-chooser-button-get-dialog"/>
+    <keyword type="macro" name="XAPP_TYPE_ICON_CHOOSER_BUTTON" link="XAppIconChooserButton.html#XAPP-TYPE-ICON-CHOOSER-BUTTON:CAPS"/>
+    <keyword type="struct" name="XAppIconChooserButton" link="XAppIconChooserButton.html#XAppIconChooserButton-struct"/>
+    <keyword type="property" name="The “category” property" link="XAppIconChooserButton.html#XAppIconChooserButton--category"/>
+    <keyword type="property" name="The “icon” property" link="XAppIconChooserButton.html#XAppIconChooserButton--icon"/>
+    <keyword type="property" name="The “icon-size” property" link="XAppIconChooserButton.html#XAppIconChooserButton--icon-size"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_new ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-new"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_run ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-run"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_run_with_icon ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-run-with-icon"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_run_with_category ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-run-with-category"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_get_icon_string ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-get-icon-string"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_add_button ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-add-button"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_get_default_icon ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-get-default-icon"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_set_default_icon ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-set-default-icon"/>
+    <keyword type="function" name="xapp_icon_chooser_dialog_add_custom_category ()" link="XAppIconChooserDialog.html#xapp-icon-chooser-dialog-add-custom-category"/>
+    <keyword type="macro" name="XAPP_TYPE_ICON_CHOOSER_DIALOG" link="XAppIconChooserDialog.html#XAPP-TYPE-ICON-CHOOSER-DIALOG:CAPS"/>
+    <keyword type="enum" name="enum XAppIconSize" link="XAppIconChooserDialog.html#XAppIconSize"/>
+    <keyword type="struct" name="XAppIconChooserDialog" link="XAppIconChooserDialog.html#XAppIconChooserDialog-struct"/>
+    <keyword type="property" name="The “allow-paths” property" link="XAppIconChooserDialog.html#XAppIconChooserDialog--allow-paths"/>
+    <keyword type="property" name="The “default-icon” property" link="XAppIconChooserDialog.html#XAppIconChooserDialog--default-icon"/>
+    <keyword type="property" name="The “icon-size” property" link="XAppIconChooserDialog.html#XAppIconChooserDialog--icon-size"/>
+    <keyword type="signal" name="The “close” signal" link="XAppIconChooserDialog.html#XAppIconChooserDialog-close"/>
+    <keyword type="signal" name="The “select” signal" link="XAppIconChooserDialog.html#XAppIconChooserDialog-select"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_new ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-new"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_enabled ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-enabled"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_set_current_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-set-current-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_next_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-next-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_previous_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-previous-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_name ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-name"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_all_names ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-all-names"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_icon_name ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-icon-name"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_icon_name_for_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-icon-name-for-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_flag_id ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-flag-id"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_flag_id_for_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-flag-id-for-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_short_group_label ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-short-group-label"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_short_group_label_for_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-short-group-label-for-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_current_variant_label ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-current-variant-label"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_get_variant_label_for_group ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-get-variant-label-for-group"/>
+    <keyword type="function" name="xapp_kbd_layout_controller_render_cairo_subscript ()" link="XAppKbdLayoutController.html#xapp-kbd-layout-controller-render-cairo-subscript"/>
+    <keyword type="property" name="The “enabled” property" link="XAppKbdLayoutController.html#XAppKbdLayoutController--enabled"/>
+    <keyword type="signal" name="The “config-changed” signal" link="XAppKbdLayoutController.html#XAppKbdLayoutController-config-changed"/>
+    <keyword type="signal" name="The “layout-changed” signal" link="XAppKbdLayoutController.html#XAppKbdLayoutController-layout-changed"/>
+    <keyword type="function" name="xapp_monitor_blanker_new ()" link="XAppMonitorBlanker.html#xapp-monitor-blanker-new"/>
+    <keyword type="function" name="xapp_monitor_blanker_blank_other_monitors ()" link="XAppMonitorBlanker.html#xapp-monitor-blanker-blank-other-monitors"/>
+    <keyword type="function" name="xapp_monitor_blanker_unblank_monitors ()" link="XAppMonitorBlanker.html#xapp-monitor-blanker-unblank-monitors"/>
+    <keyword type="function" name="xapp_monitor_blanker_are_monitors_blanked ()" link="XAppMonitorBlanker.html#xapp-monitor-blanker-are-monitors-blanked"/>
+    <keyword type="macro" name="XAPP_TYPE_MONITOR_BLANKER" link="XAppMonitorBlanker.html#XAPP-TYPE-MONITOR-BLANKER:CAPS"/>
+    <keyword type="struct" name="XAppMonitorBlanker" link="XAppMonitorBlanker.html#XAppMonitorBlanker-struct"/>
+    <keyword type="function" name="xapp_preferences_window_new ()" link="XAppPreferencesWindow.html#xapp-preferences-window-new"/>
+    <keyword type="function" name="xapp_preferences_window_add_page ()" link="XAppPreferencesWindow.html#xapp-preferences-window-add-page"/>
+    <keyword type="function" name="xapp_preferences_window_add_button ()" link="XAppPreferencesWindow.html#xapp-preferences-window-add-button"/>
+    <keyword type="macro" name="XAPP_TYPE_PREFERENCES_WINDOW" link="XAppPreferencesWindow.html#XAPP-TYPE-PREFERENCES-WINDOW:CAPS"/>
+    <keyword type="struct" name="struct XAppPreferencesWindowClass" link="XAppPreferencesWindow.html#XAppPreferencesWindowClass"/>
+    <keyword type="struct" name="XAppPreferencesWindow" link="XAppPreferencesWindow.html#XAppPreferencesWindow-struct"/>
+    <keyword type="signal" name="The “close” signal" link="XAppPreferencesWindow.html#XAppPreferencesWindow-close"/>
+    <keyword type="function" name="xapp_stack_sidebar_new ()" link="XAppStackSidebar.html#xapp-stack-sidebar-new"/>
+    <keyword type="function" name="xapp_stack_sidebar_set_stack ()" link="XAppStackSidebar.html#xapp-stack-sidebar-set-stack"/>
+    <keyword type="function" name="xapp_stack_sidebar_get_stack ()" link="XAppStackSidebar.html#xapp-stack-sidebar-get-stack"/>
+    <keyword type="macro" name="XAPP_TYPE_STACK_SIDEBAR" link="XAppStackSidebar.html#XAPP-TYPE-STACK-SIDEBAR:CAPS"/>
+    <keyword type="struct" name="XAppStackSidebar" link="XAppStackSidebar.html#XAppStackSidebar-struct"/>
+    <keyword type="property" name="The “stack” property" link="XAppStackSidebar.html#XAppStackSidebar--stack"/>
+    <keyword type="function" name="xapp_status_icon_new ()" link="XAppStatusIcon.html#xapp-status-icon-new" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_new_with_name ()" link="XAppStatusIcon.html#xapp-status-icon-new-with-name" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_name ()" link="XAppStatusIcon.html#xapp-status-icon-set-name" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_icon_name ()" link="XAppStatusIcon.html#xapp-status-icon-set-icon-name" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_get_icon_size ()" link="XAppStatusIcon.html#xapp-status-icon-get-icon-size" since="1.8"/>
+    <keyword type="function" name="xapp_status_icon_set_tooltip_text ()" link="XAppStatusIcon.html#xapp-status-icon-set-tooltip-text" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_label ()" link="XAppStatusIcon.html#xapp-status-icon-set-label" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_visible ()" link="XAppStatusIcon.html#xapp-status-icon-set-visible" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_get_visible ()" link="XAppStatusIcon.html#xapp-status-icon-get-visible" since="1.8.5"/>
+    <keyword type="function" name="xapp_status_icon_popup_menu ()" link="XAppStatusIcon.html#xapp-status-icon-popup-menu" since="1.8.6"/>
+    <keyword type="function" name="xapp_status_icon_set_primary_menu ()" link="XAppStatusIcon.html#xapp-status-icon-set-primary-menu" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_get_primary_menu ()" link="XAppStatusIcon.html#xapp-status-icon-get-primary-menu" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_secondary_menu ()" link="XAppStatusIcon.html#xapp-status-icon-set-secondary-menu" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_get_secondary_menu ()" link="XAppStatusIcon.html#xapp-status-icon-get-secondary-menu" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_get_state ()" link="XAppStatusIcon.html#xapp-status-icon-get-state" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_set_metadata ()" link="XAppStatusIcon.html#xapp-status-icon-set-metadata" since="1.8.7"/>
+    <keyword type="function" name="xapp_status_icon_any_monitors ()" link="XAppStatusIcon.html#xapp-status-icon-any-monitors" since="1.6"/>
+    <keyword type="macro" name="XAPP_TYPE_STATUS_ICON" link="XAppStatusIcon.html#XAPP-TYPE-STATUS-ICON:CAPS"/>
+    <keyword type="enum" name="enum XAppStatusIconState" link="XAppStatusIcon.html#XAppStatusIconState"/>
+    <keyword type="enum" name="enum XAppScrollDirection" link="XAppStatusIcon.html#XAppScrollDirection"/>
+    <keyword type="struct" name="XAppStatusIcon" link="XAppStatusIcon.html#XAppStatusIcon-struct"/>
+    <keyword type="property" name="The “icon-size” property" link="XAppStatusIcon.html#XAppStatusIcon--icon-size"/>
+    <keyword type="property" name="The “name” property" link="XAppStatusIcon.html#XAppStatusIcon--name"/>
+    <keyword type="property" name="The “primary-menu” property" link="XAppStatusIcon.html#XAppStatusIcon--primary-menu"/>
+    <keyword type="property" name="The “secondary-menu” property" link="XAppStatusIcon.html#XAppStatusIcon--secondary-menu"/>
+    <keyword type="signal" name="The “activate” signal" link="XAppStatusIcon.html#XAppStatusIcon-activate"/>
+    <keyword type="signal" name="The “button-press-event” signal" link="XAppStatusIcon.html#XAppStatusIcon-button-press-event"/>
+    <keyword type="signal" name="The “button-release-event” signal" link="XAppStatusIcon.html#XAppStatusIcon-button-release-event"/>
+    <keyword type="signal" name="The “scroll-event” signal" link="XAppStatusIcon.html#XAppStatusIcon-scroll-event"/>
+    <keyword type="signal" name="The “state-changed” signal" link="XAppStatusIcon.html#XAppStatusIcon-state-changed"/>
+    <keyword type="function" name="xapp_status_icon_monitor_new ()" link="XAppStatusIconMonitor.html#xapp-status-icon-monitor-new" since="1.6"/>
+    <keyword type="function" name="xapp_status_icon_monitor_list_icons ()" link="XAppStatusIconMonitor.html#xapp-status-icon-monitor-list-icons" since="1.6"/>
+    <keyword type="macro" name="XAPP_TYPE_STATUS_ICON_MONITOR" link="XAppStatusIconMonitor.html#XAPP-TYPE-STATUS-ICON-MONITOR:CAPS"/>
+    <keyword type="struct" name="XAppStatusIconMonitor" link="XAppStatusIconMonitor.html#XAppStatusIconMonitor-struct"/>
+    <keyword type="signal" name="The “icon-added” signal" link="XAppStatusIconMonitor.html#XAppStatusIconMonitor-icon-added"/>
+    <keyword type="signal" name="The “icon-removed” signal" link="XAppStatusIconMonitor.html#XAppStatusIconMonitor-icon-removed"/>
+    <keyword type="function" name="xapp_status_icon_interface_interface_info ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-interface-info"/>
+    <keyword type="function" name="xapp_status_icon_interface_override_properties ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-override-properties"/>
+    <keyword type="function" name="xapp_status_icon_interface_complete_button_press ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-complete-button-press"/>
+    <keyword type="function" name="xapp_status_icon_interface_complete_button_release ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-complete-button-release"/>
+    <keyword type="function" name="xapp_status_icon_interface_complete_scroll ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-complete-scroll"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_press ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-press"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_press_finish ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-press-finish"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_press_sync ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-press-sync"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_release ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-release"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_release_finish ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-release-finish"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_button_release_sync ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-button-release-sync"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_scroll ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-scroll"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_scroll_finish ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-scroll-finish"/>
+    <keyword type="function" name="xapp_status_icon_interface_call_scroll_sync ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-call-scroll-sync"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_dup_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-dup-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_icon_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-icon-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_dup_icon_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-dup-icon-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_icon_name ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-icon-name"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_tooltip_text ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-tooltip-text"/>
+    <keyword type="function" name="xapp_status_icon_interface_dup_tooltip_text ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-dup-tooltip-text"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_tooltip_text ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-tooltip-text"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_label ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-label"/>
+    <keyword type="function" name="xapp_status_icon_interface_dup_label ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-dup-label"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_label ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-label"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_visible ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-visible"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_visible ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-visible"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_icon_size ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-icon-size"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_icon_size ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-icon-size"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_primary_menu_is_open ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-primary-menu-is-open"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_primary_menu_is_open ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-primary-menu-is-open"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_secondary_menu_is_open ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-secondary-menu-is-open"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_secondary_menu_is_open ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-secondary-menu-is-open"/>
+    <keyword type="function" name="xapp_status_icon_interface_get_metadata ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-get-metadata"/>
+    <keyword type="function" name="xapp_status_icon_interface_dup_metadata ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-dup-metadata"/>
+    <keyword type="function" name="xapp_status_icon_interface_set_metadata ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-set-metadata"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new_finish ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new-finish"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new_sync ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new-sync"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new_for_bus ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new-for-bus"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new_for_bus_finish ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new-for-bus-finish"/>
+    <keyword type="function" name="xapp_status_icon_interface_proxy_new_for_bus_sync ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-proxy-new-for-bus-sync"/>
+    <keyword type="function" name="xapp_status_icon_interface_skeleton_new ()" link="XAppObjectManagerClient.html#xapp-status-icon-interface-skeleton-new"/>
+    <keyword type="function" name="xapp_object_get_status_icon_interface ()" link="XAppObjectManagerClient.html#xapp-object-get-status-icon-interface"/>
+    <keyword type="function" name="xapp_object_peek_status_icon_interface ()" link="XAppObjectManagerClient.html#xapp-object-peek-status-icon-interface"/>
+    <keyword type="function" name="xapp_object_proxy_new ()" link="XAppObjectManagerClient.html#xapp-object-proxy-new"/>
+    <keyword type="function" name="xapp_object_skeleton_new ()" link="XAppObjectManagerClient.html#xapp-object-skeleton-new"/>
+    <keyword type="function" name="xapp_object_skeleton_set_status_icon_interface ()" link="XAppObjectManagerClient.html#xapp-object-skeleton-set-status-icon-interface"/>
+    <keyword type="function" name="xapp_object_manager_client_get_proxy_type ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-get-proxy-type"/>
+    <keyword type="function" name="xapp_object_manager_client_new ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new"/>
+    <keyword type="function" name="xapp_object_manager_client_new_finish ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new-finish"/>
+    <keyword type="function" name="xapp_object_manager_client_new_sync ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new-sync"/>
+    <keyword type="function" name="xapp_object_manager_client_new_for_bus ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new-for-bus"/>
+    <keyword type="function" name="xapp_object_manager_client_new_for_bus_finish ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new-for-bus-finish"/>
+    <keyword type="function" name="xapp_object_manager_client_new_for_bus_sync ()" link="XAppObjectManagerClient.html#xapp-object-manager-client-new-for-bus-sync"/>
+    <keyword type="property" name="The “status-icon-interface” property" link="XAppObjectManagerClient.html#XAppObject--status-icon-interface"/>
+    <keyword type="property" name="The “icon-name” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--icon-name"/>
+    <keyword type="property" name="The “icon-size” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--icon-size"/>
+    <keyword type="property" name="The “label” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--label"/>
+    <keyword type="property" name="The “metadata” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--metadata"/>
+    <keyword type="property" name="The “name” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--name"/>
+    <keyword type="property" name="The “primary-menu-is-open” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--primary-menu-is-open"/>
+    <keyword type="property" name="The “secondary-menu-is-open” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--secondary-menu-is-open"/>
+    <keyword type="property" name="The “tooltip-text” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--tooltip-text"/>
+    <keyword type="property" name="The “visible” property" link="XAppObjectManagerClient.html#XAppStatusIconInterface--visible"/>
+    <keyword type="signal" name="The “handle-button-press” signal" link="XAppObjectManagerClient.html#XAppStatusIconInterface-handle-button-press"/>
+    <keyword type="signal" name="The “handle-button-release” signal" link="XAppObjectManagerClient.html#XAppStatusIconInterface-handle-button-release"/>
+    <keyword type="signal" name="The “handle-scroll” signal" link="XAppObjectManagerClient.html#XAppStatusIconInterface-handle-scroll"/>
+    <keyword type="function" name="xapp_util_gpu_offload_supported ()" link="libxapp-xapp-util.html#xapp-util-gpu-offload-supported" since="1.8"/>
+    <keyword type="function" name="xapp_util_get_session_is_running ()" link="libxapp-xapp-util.html#xapp-util-get-session-is-running" since="2.0"/>
+    <keyword type="function" name="xapp_pango_font_string_to_css ()" link="libxapp-xapp-util.html#xapp-pango-font-string-to-css" since="2.2"/>
+    <keyword type="function" name="xapp_get_tmp_dir ()" link="libxapp-xapp-util.html#xapp-get-tmp-dir" since="2.2.16"/>
+    <keyword type="function" name="xapp_visibility_group_new ()" link="XAppVisibilityGroup.html#xapp-visibility-group-new" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_add_widget ()" link="XAppVisibilityGroup.html#xapp-visibility-group-add-widget" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_remove_widget ()" link="XAppVisibilityGroup.html#xapp-visibility-group-remove-widget" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_hide ()" link="XAppVisibilityGroup.html#xapp-visibility-group-hide" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_show ()" link="XAppVisibilityGroup.html#xapp-visibility-group-show" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_set_visible ()" link="XAppVisibilityGroup.html#xapp-visibility-group-set-visible" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_get_visible ()" link="XAppVisibilityGroup.html#xapp-visibility-group-get-visible" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_set_sensitive ()" link="XAppVisibilityGroup.html#xapp-visibility-group-set-sensitive" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_get_sensitive ()" link="XAppVisibilityGroup.html#xapp-visibility-group-get-sensitive" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_get_widgets ()" link="XAppVisibilityGroup.html#xapp-visibility-group-get-widgets" since="2.2.15"/>
+    <keyword type="function" name="xapp_visibility_group_set_widgets ()" link="XAppVisibilityGroup.html#xapp-visibility-group-set-widgets" since="2.2.15"/>
+    <keyword type="struct" name="struct XAppVisibilityGroup" link="XAppVisibilityGroup.html#XAppVisibilityGroup-struct"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_16" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-16:CAPS"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_22" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-22:CAPS"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_24" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-24:CAPS"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_32" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-32:CAPS"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_48" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-48:CAPS"/>
+    <keyword type="constant" name="XAPP_ICON_SIZE_96" link="XAppIconChooserDialog.html#XAPP-ICON-SIZE-96:CAPS"/>
+    <keyword type="constant" name="XAPP_STATUS_ICON_STATE_NATIVE" link="XAppStatusIcon.html#XAPP-STATUS-ICON-STATE-NATIVE:CAPS"/>
+    <keyword type="constant" name="XAPP_STATUS_ICON_STATE_FALLBACK" link="XAppStatusIcon.html#XAPP-STATUS-ICON-STATE-FALLBACK:CAPS"/>
+    <keyword type="constant" name="XAPP_STATUS_ICON_STATE_NO_SUPPORT" link="XAppStatusIcon.html#XAPP-STATUS-ICON-STATE-NO-SUPPORT:CAPS"/>
+    <keyword type="constant" name="XAPP_SCROLL_UP" link="XAppStatusIcon.html#XAPP-SCROLL-UP:CAPS"/>
+    <keyword type="constant" name="XAPP_SCROLL_DOWN" link="XAppStatusIcon.html#XAPP-SCROLL-DOWN:CAPS"/>
+    <keyword type="constant" name="XAPP_SCROLL_LEFT" link="XAppStatusIcon.html#XAPP-SCROLL-LEFT:CAPS"/>
+    <keyword type="constant" name="XAPP_SCROLL_RIGHT" link="XAppStatusIcon.html#XAPP-SCROLL-RIGHT:CAPS"/>
+    <keyword type="member" name="XAppFavoriteInfo-struct.uri" link="XAppFavorites.html#XAppFavoriteInfo-struct.uri"/>
+    <keyword type="member" name="XAppFavoriteInfo-struct.display-name" link="XAppFavorites.html#XAppFavoriteInfo-struct.display-name"/>
+    <keyword type="member" name="XAppFavoriteInfo-struct.cached-mimetype" link="XAppFavorites.html#XAppFavoriteInfo-struct.cached-mimetype"/>
+    <keyword type="member" name="XAppGpuInfo-struct.id" link="XAppGpuOffloadHelper.html#XAppGpuInfo-struct.id"/>
+    <keyword type="member" name="XAppGpuInfo-struct.is-default" link="XAppGpuOffloadHelper.html#XAppGpuInfo-struct.is-default"/>
+    <keyword type="member" name="XAppGpuInfo-struct.display-name" link="XAppGpuOffloadHelper.html#XAppGpuInfo-struct.display-name"/>
+    <keyword type="member" name="XAppGpuInfo-struct.env-strv" link="XAppGpuOffloadHelper.html#XAppGpuInfo-struct.env-strv"/>
+    <keyword type="member" name="XAppVisibilityGroup-struct.widgets" link="XAppVisibilityGroup.html#XAppVisibilityGroup-struct.widgets"/>
+    <keyword type="member" name="XAppVisibilityGroup-struct.visible" link="XAppVisibilityGroup.html#XAppVisibilityGroup-struct.visible"/>
+    <keyword type="member" name="XAppVisibilityGroup-struct.sensitive" link="XAppVisibilityGroup.html#XAppVisibilityGroup-struct.sensitive"/>
+  </functions>
+</book>

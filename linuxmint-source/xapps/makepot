@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -f xapp.pot
+touch xapp.pot
+xgettext --language=C --add-comments --keyword=_ --keyword=N_ --output=xapp.pot libxapp/*.c
+xgettext --language=Python --add-comments --keyword=_ --join-existing --output=xapp.pot status-applets/*/*.py
+xgettext --language=Desktop --join-existing --add-comments \
+          -k --keyword=Name --keyword=Description --output=xapp.pot status-applets/mate/org.x.MateXAppStatusApplet.mate-panel-applet.in.in
+

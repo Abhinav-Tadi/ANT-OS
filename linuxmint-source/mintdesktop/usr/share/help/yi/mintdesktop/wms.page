@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="wms">
+
+   <info>
+    <link type="guide" xref="index#windows"/>
+    <credit type="author">
+      <name>Linux Mint</name>
+      <email>root@linuxmint.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  </info>
+
+  <title>איבערבליק פֿון עטלעכע פֿענצטער־מענעדזשערס</title>
+
+  <p>ס'איז דאָ אַ באַשרײַבונג פֿון עטלעכע בנימצא פֿענצטער־מענעדזשערס.</p>
+
+  <section id="pros">
+    <title>Marco</title>
+    <p>Macro איז דער פֿענצטער־מענעדזשער פֿאַר דער MATE עקראַנאָרט־סבֿיבֿה דורך דער פֿעליקײט. ער איז זײער סטאַביל און פֿאַרלאָזלעך. ער קען פֿונקציאָנירן מיט אָדער אָן קאָמפּאָזיטונג.</p>
+    <p>If Marco is not installed already, you can install it with <cmd>apt install marco</cmd>.</p>
+  </section>
+
+  <section id="pros">
+    <title>Metacity</title>
+    <p>Metacity איז דער פֿענצטער־מענעדזשער פֿאַר דער GNOME2 עקראַנאָרט־סבֿיבֿה דורך דער פֿעליקײט. ער איז זײער סטאַביל און פֿאַרלאָזלעך. ער קען פֿונקציאָנירן מיט אָדער אָן קאָמפּאָזיטונג.</p>
+    <p>If Metacity is not installed already, you can install it with <cmd>apt install metacity</cmd>.</p>
+  </section>
+
+  <section id="pros">
+    <title>Mutter</title>
+    <p>Mutter is the default window and compositing manager for the GNOME 3 desktop environment. It is very stable and very reliable.</p>
+    <p>If Mutter is not installed already, you can install it with <cmd>apt install mutter</cmd>.</p>
+  </section>
+
+  <section id="pros">
+    <title>Xfwm4</title>
+    <p>Xfwm4 איז דער פֿענצטער־מענעדזשער פֿאַר דער Xfce עקראַנאָרט־סבֿיבֿה דורך דער פֿעליקײט. ער איז זײער סטאַביל און פֿאַרלאָזלעך. ער קען פֿונקציאָנירן מיט אָדער אָן קאָמפּאָזיטונג.</p>
+    <p>If Xfwm4 is not installed already, you can install it with <cmd>apt install xfwm4</cmd>.</p>
+  </section>
+
+  <section id="pros">
+    <title>Compiz</title>
+    <p>Compiz איז זײער אַן אימפּאָזאַנטער פֿענצטער־מענעדזשער, ער איז זײער קאָנפֿיגורירבאַר און פֿול מיט אומבאַגרײַפֿלעכע עפֿעקטן און אַנימאַציעס. מערניט, איז ער דער אונפֿאַרלאָזלעכסטער און דער אונסטאַבילסטער.</p>
+    <p>Compiz איז אינסטאַלירט אין Linux Mint דורך דער פֿעליקײט. אָנמערקונג: ער איז ניט בנימצא אין LMDE</p>
+  </section>
+
+  <section id="pros">
+    <title>Compton</title>
+    <p>Compton is a compositing manager. It can be used in combination with windows managers such as Marco, Metacity or Xfwm4. In Xfce, using Xfwm4+Compton is known to reduce screen tearing.</p>
+    <p>If Compton is not installed already, you can install it with <cmd>apt install compton</cmd>.</p>
+  </section>
+
+  <section id="pros">
+    <title>Openbox</title>
+    <p>Openbox is a fast and light-weight window manager.</p>
+    <p>If Openbox is not installed already, you can install it with <cmd>apt install openbox</cmd>.</p>
+  </section>
+
+</page>

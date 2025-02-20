@@ -1,0 +1,13 @@
+[Applet Factory]
+Id=MateXAppStatusAppletFactory
+InProcess=false
+Location=@libexec@/xapps/mate-xapp-status-applet.py
+Name=XApp Status Applet Factory
+Description=Area where XApp status icons appear
+
+[MateXAppStatusApplet]
+Name=XApp Status Applet
+Description=Area where XApp status icons appear
+Icon=xapp-mate-status-applet
+MateComponentId=OAFIID:MATE_MateXAppStatusApplet;
+
