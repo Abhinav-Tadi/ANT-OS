@@ -10,7 +10,7 @@ declare -A file_moves=(
     ["$BASE_DIR/branding/grub/background.png"]="/usr/share/backgrounds/background.png"
     ["$BASE_DIR/branding/plymouth/mint-logo.png"]="/usr/share/plymouth/themes/mint-logo.png"
     ["$BASE_DIR/linuxmint-source/mintupdate/usr/bin/mintupdate"]="/usr/bin/mintupdate"
-    ["$BASE_DIR/config/grub.cfg"]="/boot/grub/grub.cfg"
+    ["$BASE_DIR/boot/grub/grub.cfg"]="/boot/grub/grub.cfg"  # Fixed Path
     ["$BASE_DIR/config/system.dconf"]="/etc/dconf/system.dconf"
 )
 
@@ -35,7 +35,7 @@ move_files() {
 
         if [ -f "$src" ]; then
             mkdir -p "$(dirname "$dest")"
-            mv "$src" "$dest"
+            mv "$src" "$dest" || echo "Error moving file: mv '$src' '$dest'" >> setup.log
             echo "$dest → $src" >> "$BACKUP_FILE"
             echo "Moved: $src → $dest" | tee -a "$LOG_FILE"
         else
@@ -68,7 +68,8 @@ check_dependencies() {
 
     for package in "${required_packages[@]}"; do
         if ! dpkg -l | grep -q "$package"; then
-            echo "Missing package: $package (install using: sudo apt install $package)" | tee -a "$LOG_FILE"
+            echo "Installing missing package: $package" | tee -a "$LOG_FILE"
+            sudo apt install -y "$package" || echo "Failed to install: $package" >> "$LOG_FILE"
         else
             echo "Found: $package" | tee -a "$LOG_FILE"
         fi
@@ -87,7 +88,7 @@ undo_moves() {
     while IFS=" → " read -r moved_file original_location; do
         if [ -f "$moved_file" ]; then
             mkdir -p "$(dirname "$original_location")"
-            mv "$moved_file" "$original_location"
+            mv "$moved_file" "$original_location" || echo "Error moving file: mv '$moved_file' '$original_location'" >> setup.log
             echo "Restored: $moved_file → $original_location" | tee -a "$LOG_FILE"
         else
             echo "Warning: $moved_file not found!" | tee -a "$LOG_FILE"
