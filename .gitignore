@@ -3,3 +3,7 @@ ANT-OS.img
 boot/initrd.img
 bfg-1.14.0.jar
 bfg-1.14.0.jar.1
+ANT-OS-final.iso
+boot/rootfs.squashfs
+iso/
+rootfs/
